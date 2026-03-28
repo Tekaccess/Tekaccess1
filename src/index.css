@@ -37,15 +37,15 @@
     --radius: 1rem;
 
     /* Glassmorphism tokens */
-    --glass-bg: 0 0% 100% / 0.7;
-    --glass-border: 0 0% 100% / 0.4;
-    --glass-blur: 20px;
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    --glass-bg: 0 0% 100% / 0.75;
+    --glass-border: 0 0% 100% / 0.5;
+    --glass-blur: 24px;
+    --glass-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
     
     /* Gradient colors - Red theme */
     --gradient-start: 0 85% 50%;
     --gradient-mid: 0 70% 40%;
-    --gradient-end: 0 0% 15%;
+    --gradient-end: 0 0% 10%;
     
     /* Mesh background - Light */
     --mesh-1: 0 70% 95%;
@@ -65,23 +65,23 @@
 
   .dark {
     /* Dark theme - Red, Black, White color scheme */
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 9%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 9%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 0 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 14%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 14%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
     --accent: 0 80% 50%;
     --accent-foreground: 0 0% 100%;
@@ -89,15 +89,15 @@
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 95%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
+    --border: 0 0% 14%;
+    --input: 0 0% 14%;
     --ring: 0 85% 55%;
 
     /* Glassmorphism tokens - Dark */
-    --glass-bg: 0 0% 9% / 0.7;
-    --glass-border: 0 0% 100% / 0.1;
-    --glass-blur: 20px;
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --glass-bg: 0 0% 7% / 0.75;
+    --glass-border: 0 0% 100% / 0.15;
+    --glass-blur: 24px;
+    --glass-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.7);
     
     /* Gradient colors - Dark Red theme */
     --gradient-start: 0 85% 55%;
@@ -267,15 +267,15 @@
 @keyframes meshMove {
   0%, 100% {
     background-position: 0% 0%;
+    transform: scale(1);
   }
-  25% {
-    background-position: 5% 5%;
+  33% {
+    background-position: 5% 7%;
+    transform: scale(1.05);
   }
-  50% {
-    background-position: 0% 10%;
-  }
-  75% {
-    background-position: -5% 5%;
+  66% {
+    background-position: -5% 10%;
+    transform: scale(1.02);
   }
 }
 
@@ -287,7 +287,7 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -295,6 +295,30 @@
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass-mask {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.parallax-wrapper {
+  perspective: 1000px;
+}
+
+.parallax-element {
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
