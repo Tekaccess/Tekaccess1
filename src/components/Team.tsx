@@ -56,6 +56,30 @@ const Team = () => {
           "Supports coordination and monitoring of daily operations, administrative efficiency with organization and dedication.",
         bio: "Ensuring that the heart of TekAccess beats with precision and care.",
       },
+      {
+        id: "kevine",
+        name: "MURENZI UWASE Kevine",
+        position: "Operations Officer",
+        about:
+          "Manages daily operations and ensures smooth execution of logistics workflows with precision and efficiency.",
+        bio: "Dedicated to optimizing operational processes for exceptional service delivery.",
+      },
+      {
+        id: "richard",
+        name: "MUGABO Richard",
+        position: "Procurement Officer",
+        about:
+          "Oversees procurement strategies and supplier relationships, ensuring quality and cost-effective sourcing.",
+        bio: "Committed to building strong partnerships and securing the best resources for TekAccess.",
+      },
+      {
+        id: "joy",
+        name: "NTIZIMIRA Joy",
+        position: "IT Officer",
+        about:
+          "Manages technology infrastructure and digital systems, driving innovation through technical excellence.",
+        bio: "Passionate about leveraging technology to solve complex logistics challenges.",
+      },
     ];
 
     if (isReady) {

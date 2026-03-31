@@ -13,7 +13,6 @@ const Partners = () => {
     { name: "EDCL", logo: edclLogo },
     { name: "CHUB", logo: chubLogo },
     { name: "CHUK", logo: chukLogo },
-    { name: "Gasabo District", logo: gatsiboLogo },
     { name: "RAB", logo: rabLogo },
     { name: "Rwanda National Police", logo: rnpLogo },
     { name: "Cheetah", logo: cheetahLogo },
