@@ -28,6 +28,19 @@ const Header = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        showUserMenu &&
+        !(event.target as Element).closest("[data-user-menu]")
+      ) {
+        setShowUserMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [showUserMenu]);
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     setIsLoggedIn(false);
@@ -110,24 +123,67 @@ const Header = () => {
 
             {/* Desktop Right Actions */}
             <div className="hidden items-center gap-4 lg:flex shrink-0">
-              <div className="flex items-center gap-1 mr-2  border-slate-200 pr-4">
+              <div className="flex items-center gap-1 mr-2 border-slate-200 pr-4">
                 <button className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary">
                   <Globe className="h-4 w-4" />
                 </button>
-                <button className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary">
-                  <User className="h-4 w-4" />
-                </button>
+                {isLoggedIn ? (
+                  <div className="relative" data-user-menu>
+                    <button
+                      onClick={() => setShowUserMenu(!showUserMenu)}
+                      className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0A1437] text-white transition-colors hover:bg-[#0A1437]/80"
+                    >
+                      <User className="h-4 w-4" />
+                    </button>
+                    {showUserMenu && (
+                      <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden py-2 z-50">
+                        <div className="px-4 py-3 border-b border-slate-100">
+                          <p className="text-sm font-bold text-[#0A1437] truncate">
+                            {userEmail}
+                          </p>
+                          <p className="text-xs text-slate-500 mt-0.5">
+                            Logged in
+                          </p>
+                        </div>
+                        <button
+                          onClick={() => {
+                            navigate("/dashboard");
+                            setShowUserMenu(false);
+                          }}
+                          className="w-full flex items-center gap-3 px-4 py-3 text-sm font-bold text-slate-600 hover:bg-slate-50 transition-colors"
+                        >
+                          <Lock className="h-4 w-4" />
+                          Dashboard
+                        </button>
+                        <button
+                          onClick={handleLogout}
+                          className="w-full flex items-center gap-3 px-4 py-3 text-sm font-bold text-red-600 hover:bg-red-50 transition-colors"
+                        >
+                          <LogOut className="h-4 w-4" />
+                          Logout
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => navigate("/login")}
+                    className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary"
+                  >
+                    <User className="h-4 w-4" />
+                  </button>
+                )}
               </div>
 
-              {/* <button
-                onClick={() => window.location.href = "/login.html"}
+              <button
+                onClick={() => navigate(isLoggedIn ? "/dashboard" : "/login")}
                 className="gradient-btn text-xs px-6 py-2 shadow-sm"
               >
                 <span className="flex items-center gap-2">
                   <Lock className="h-3.5 w-3.5" />
-                  Manager Portal
+                  {isLoggedIn ? "Dashboard" : "Manager Portal"}
                 </span>
-              </button> */}
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -168,13 +224,38 @@ const Header = () => {
                 </button>
               ))}
               <div className="my-4 h-px bg-slate-100" />
-              <button
-                onClick={() => (window.location.href = "/login.html")}
-                className="gradient-btn w-full flex items-center justify-center gap-3 p-5 text-base"
-              >
-                <Lock className="h-5 w-5" />
-                Manager Portal
-              </button>
+              {isLoggedIn ? (
+                <>
+                  <button
+                    onClick={() => {
+                      navigate("/dashboard");
+                      setMobileMenuOpen(false);
+                    }}
+                    className="gradient-btn w-full flex items-center justify-center gap-3 p-5 text-base"
+                  >
+                    <Lock className="h-5 w-5" />
+                    Dashboard
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="w-full flex items-center justify-center gap-3 px-6 py-5 text-base font-bold text-red-600 bg-red-50 rounded-2xl hover:bg-red-100 transition-colors"
+                  >
+                    <LogOut className="h-5 w-5" />
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <button
+                  onClick={() => {
+                    navigate("/login");
+                    setMobileMenuOpen(false);
+                  }}
+                  className="gradient-btn w-full flex items-center justify-center gap-3 p-5 text-base"
+                >
+                  <Lock className="h-5 w-5" />
+                  Manager Portal
+                </button>
+              )}
             </div>
           </nav>
         </div>
