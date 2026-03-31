@@ -49,7 +49,7 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex min-h-screen items-center justify-center pt-20">
-        <div className="max-w-3xl bg-red-00 text-center">
+        <div className="max-w-3xl bg-red-00 mt-24 text-center">
           <div
             className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
