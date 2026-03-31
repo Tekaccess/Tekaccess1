@@ -6,139 +6,101 @@ const AboutUs = () => {
   const coreValues = [
     { 
       title: "Awareness", 
-      icon: <Eye className="h-6 w-6 text-primary" />,
-      desc: "We maintain awareness of our environment, our impact and the evolving needs of our stakeholders, making every decision with clarity and responsibility."
+      icon: <Eye className="h-6 w-6" />,
+      desc: "We maintain awareness of our environment, our impact and the evolving needs of our stakeholders."
     },
     { 
       title: "Proactivity", 
-      icon: <Zap className="h-6 w-6 text-primary" />,
+      icon: <Zap className="h-6 w-6" />,
       desc: "Through proactivity, we anticipate challenges and opportunities, ensuring timely and effective solutions."
     },
     { 
       title: "Accountability", 
-      icon: <ShieldCheck className="h-6 w-6 text-primary" />,
+      icon: <ShieldCheck className="h-6 w-6" />,
       desc: "Our accountability keeps us true to our word, honoring every commitment with transparency and integrity."
     },
     { 
       title: "Focus", 
-      icon: <Target className="h-6 w-6 text-primary" />,
+      icon: <Target className="h-6 w-6" />,
       desc: "We uphold focus, staying committed to what matters most, delivering with precision and consistency."
     },
     { 
       title: "Resilience", 
-      icon: <Anchor className="h-6 w-6 text-primary" />,
+      icon: <Anchor className="h-6 w-6" />,
       desc: "With resilience, we adapt and rise above challenges, maintaining reliability through every project."
     },
     { 
       title: "Growth", 
-      icon: <TrendingUp className="h-6 w-6 text-primary" />,
+      icon: <TrendingUp className="h-6 w-6" />,
       desc: "We pursue growth, embracing continuous improvement for our people, partners, and systems."
     },
     { 
       title: "Excellence", 
-      icon: <Award className="h-6 w-6 text-primary" />,
-      desc: "And in all we do, we strive for excellence, setting the highest standards and delivering solutions that inspire confidence and create lasting value."
+      icon: <Award className="h-6 w-6" />,
+      desc: "We strive for excellence, setting the highest standards and delivering solutions that inspire confidence."
     }
   ];
 
   return (
-    <section id="about" className="relative overflow-hidden bg-white">
-      {/* Hero Content Section - Clean Light Theme */}
-      <div className="relative bg-slate-50 py-24 sm:py-28 lg:py-36 px-4 sm:px-6 lg:px-8 border-b border-slate-100">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-blue-500/5 blur-[100px]" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left Content */}
-            <div className="space-y-10 text-center lg:text-left">
-              <div>
-                <span className="inline-block text-primary font-bold text-xs tracking-widest uppercase mb-6 px-3 py-1 bg-primary/10 rounded-full">
-                  ESTABLISHED EXCELLENCE
-                </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight mb-8">
-                  Your Trusted Partner in <br />
-                  <span className="text-primary italic">Reliable Logistics</span> <br />
-                  & Supply Solutions.
-                </h2>
-              </div>
-              
+    <section id="about" className="relative bg-white overflow-hidden">
+      {/* Introduction */}
+      <div className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-b border-slate-100 bg-slate-50">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-10">
               <div className="space-y-6">
-                <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  Founded on integrity and excellence, <span className="text-slate-900 font-semibold">TekAccess</span> is a trusted logistics and transport solutions provider.
-                </p>
-                <p className="text-slate-500 text-base leading-relaxed max-w-2xl mx-auto lg:mx-0 font-light">
-                  We specialize in supply chain operations across multiple industries, combining efficiency, safety, and reliability to deliver results that exceed client expectations.
+                <span className="inline-block rounded-full bg-primary/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#0A1437]">
+                  Since 2018
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight">
+                  Driving Logistics <br />
+                  <span className="text-[#0A1437] italic">Excellence</span> Across Rwanda.
+                </h2>
+                <p className="text-lg text-slate-600 font-light leading-relaxed max-w-2xl">
+                  Founded on integrity and excellence, <strong className="text-slate-900">TekAccess</strong> is a trusted logistics and transport solutions provider specializing in high-performance supply chain operations.
                 </p>
               </div>
-
-              <div className="pt-6">
-                <a 
-                  href="#contact" 
-                  className="gradient-btn text-xs px-8 py-3.5 inline-flex items-center gap-3 shadow-sm hover:scale-105 transition-all"
-                >
-                  PARTNER WITH US
-                  <span className="text-lg">→</span>
+              <div className="flex flex-wrap gap-6">
+                <a href="#services" className="gradient-btn px-10">Our Services</a>
+                <a href="#contact" className="inline-flex items-center gap-2 font-bold text-sm text-[#0A1437] hover:underline">
+                  Partner with us <span>→</span>
                 </a>
               </div>
             </div>
-
-            {/* Right - Image with Premium Frame */}
             <div className="relative">
-              <div className="relative z-10 overflow-hidden rounded-[2.5rem] border border-slate-200 shadow-2xl">
-                <img
-                  src={aboutTruckLoading}
-                  alt="TekAccess Logistics Operations"
-                  className="w-full h-[350px] sm:h-[450px] lg:h-[550px] object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-slate-200 shadow-2xl">
+                <img src={aboutTruckLoading} alt="Operations" className="w-full aspect-[4/3] object-cover" />
               </div>
-              {/* Decorative gold/primary highlight */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl z-0" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Our Story Section - Pure White */}
-      <div className="relative py-24 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-hidden bg-white">
-        <div className="relative mx-auto max-w-7xl">
+      {/* Story */}
+      <div className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
+        <div className="mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
-            {/* Left - Image */}
-            <div className="relative">
-               <div className="relative overflow-hidden rounded-[2rem] shadow-xl transform -rotate-1 border border-slate-100">
-                <img
-                  src={aboutMaterials}
-                  alt="Modernized logistics operations"
-                  className="w-full h-[350px] sm:h-[450px] object-cover"
-                />
+            <div className="order-2 lg:order-1 relative">
+              <div className="relative overflow-hidden rounded-[2rem] shadow-xl border border-slate-100">
+                <img src={aboutMaterials} alt="Story" className="w-full aspect-[4/3] object-cover" />
               </div>
-              <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary/20 rounded-tl-3xl" />
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary/20 rounded-br-3xl" />
             </div>
-
-            {/* Right - Text */}
-            <div className="space-y-10">
-              <div>
-                <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">Our Story</h3>
-                <p className="text-slate-600 text-lg leading-relaxed font-light">
-                  From import to final delivery, <span className="text-slate-900 font-medium">TekAccess</span> modernizes logistics operations with reliable transport solutions that connect businesses across Rwanda and beyond.
-                </p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-8 pt-4">
-                <div className="p-10 bg-slate-50 rounded-[2rem] border border-slate-100 shadow-sm">
-                  <p className="text-primary font-bold text-[10px] tracking-widest uppercase mb-4">Vision</p>
-                  <p className="text-slate-900 font-medium leading-relaxed text-sm">
-                    To drive growth and excellence, creating solutions that enrich lives and deliver lasting value for all stakeholders.
+            <div className="order-1 lg:order-2 space-y-8">
+              <h3 className="text-3xl font-extrabold text-[#0A1437]">Our Story</h3>
+              <p className="text-slate-600 text-lg font-light leading-relaxed">
+                From import to final delivery, we modernize logistics operations with reliable transport solutions that connect businesses across Rwanda and beyond.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="p-8 bg-slate-50 rounded-[1.5rem] border border-slate-100">
+                  <p className="text-[#0A1437]/60 font-bold text-[10px] tracking-widest uppercase mb-3">Vision</p>
+                  <p className="text-slate-900 text-sm font-medium leading-relaxed">
+                    To drive growth and excellence, creating solutions that enrich lives and deliver lasting value.
                   </p>
                 </div>
-                <div className="p-10 bg-slate-50 rounded-[2rem] border border-slate-100 shadow-sm">
-                  <p className="text-primary font-bold text-[10px] tracking-widest uppercase mb-4">Mission</p>
-                  <p className="text-slate-900 font-medium leading-relaxed text-sm">
-                    To be a trusted partner in all we do, delivering timely and efficient solutions with integrity and conscious practices, empowering all stakeholders to thrive.
+                <div className="p-8 bg-slate-50 rounded-[1.5rem] border border-slate-100">
+                  <p className="text-[#0A1437]/60 font-bold text-[10px] tracking-widest uppercase mb-3">Mission</p>
+                  <p className="text-slate-900 text-sm font-medium leading-relaxed">
+                    To be a trusted partner delivery timely and efficient solutions with integrity and conscious practices.
                   </p>
                 </div>
               </div>
@@ -147,29 +109,22 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Core Values Section */}
-      <div className="relative bg-slate-50 py-32 px-4 sm:px-6 lg:px-8 border-y border-slate-100">
-        <div className="relative mx-auto max-w-7xl">
-          <div className="text-center mb-24">
-            <h3 className="text-3xl sm:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">Our Core Values</h3>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto font-light">
-              The heart of our organization, guiding every decision and action we take to serve you better.
-            </p>
-            <div className="mt-10 h-1.5 w-24 bg-primary mx-auto rounded-full" />
+      {/* Values */}
+      <div className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-slate-50 border-t border-slate-100">
+        <div className="mx-auto max-w-7xl">
+          <div className="text-center mb-20 space-y-6">
+            <h3 className="text-3xl sm:text-5xl font-extrabold text-[#0A1437]">Core Values</h3>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto font-light">The principles guiding every decision and action at TekAccess.</p>
+            <div className="mx-auto h-1 w-20 bg-[#0A1437] rounded-full" />
           </div>
-
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreValues.map((value, index) => (
-              <div key={index} className="group p-10 bg-white rounded-[2.5rem] border border-slate-100 transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50">
-                <div className="mb-8 p-5 bg-slate-50 rounded-2xl inline-block group-hover:bg-primary group-hover:scale-110 transition-all duration-500 shadow-sm">
-                  <div className="text-primary group-hover:text-white transition-colors">
-                    {value.icon}
-                  </div>
+            {coreValues.map((value, idx) => (
+              <div key={idx} className="group p-10 bg-white rounded-[2rem] border border-slate-100 transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
+                <div className="mb-8 h-14 w-14 flex items-center justify-center rounded-2xl bg-slate-50 text-slate-400 group-hover:bg-[#0A1437] group-hover:text-white transition-all duration-500">
+                  {value.icon}
                 </div>
-                <h4 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{value.title}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed font-light group-hover:text-slate-800 transition-colors">
-                  {value.desc}
-                </p>
+                <h4 className="text-xl font-bold text-[#0A1437] mb-3">{value.title}</h4>
+                <p className="text-slate-600 text-sm font-light leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>

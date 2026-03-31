@@ -15,11 +15,10 @@ const Footer = () => {
   };
 
   return (
-    <footer className="section-footer relative border-t border-slate-100 px-4 py-20 sm:px-6 lg:px-8 overflow-hidden bg-white">
+    <footer className="section-footer relative border-t border-slate-100 px-4 py-24 sm:px-6 lg:px-8 overflow-hidden bg-white">
       {/* Background layer */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-slate-50/50" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
+        <div className="absolute inset-0 bg-slate-50/30" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">

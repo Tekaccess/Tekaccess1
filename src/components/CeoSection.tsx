@@ -3,45 +3,36 @@ import ceoImage from "@/assets/ceo.jpg";
 const CeoSection = () => {
   return (
     <section id="ceo" className="relative py-32 overflow-hidden bg-white">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 -z-10 bg-slate-50">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-500/5 rounded-full blur-[120px]" />
-      </div>
-
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
           {/* CEO Image Side */}
           <div className="relative group">
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-[3rem] border border-slate-200 shadow-2xl bg-slate-100">
+            <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-[2rem] border border-slate-200 shadow-2xl bg-white">
               <img
                 src={ceoImage}
                 alt="MURINZI AHORUKOMEYE Bertin - CEO TekAccess"
                 className="w-full h-full object-cover object-[center_20%] grayscale hover:grayscale-0 transition-all duration-1000 transform hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent opacity-60" />
+              <div className="absolute inset-0 bg-slate-900/10 pointer-events-none group-hover:bg-transparent transition-all duration-700" />
             </div>
             
             {/* Floating badge */}
-            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-xl border border-slate-100 px-10 py-5 rounded-[2rem] shadow-2xl">
-              <div className="text-center">
-                <p className="text-sm font-bold text-primary uppercase tracking-widest mb-1">Founder & CEO</p>
-                <p className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.1em] leading-tight">TekAccess Ltd</p>
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#0A1437] px-10 py-5 rounded-[1.5rem] shadow-2xl">
+              <div className="text-center text-white">
+                <p className="text-xs font-bold uppercase tracking-widest mb-1 opacity-70">Founder & CEO</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.1em] leading-tight">TekAccess Ltd</p>
               </div>
             </div>
-            
-            {/* Decorative behind image */}
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/10 blur-3xl rounded-full opacity-40" />
           </div>
 
           {/* CEO Content Side */}
           <div className="lg:pl-8">
             <div className="mb-12 text-center lg:text-left">
-              <span className="inline-block text-primary font-bold text-xs tracking-widest uppercase mb-6 py-1 px-3 bg-primary/10 rounded-full">
+              <span className="inline-block text-[#0A1437] font-bold text-xs tracking-widest uppercase mb-6 py-1 px-3 bg-slate-100 rounded-full border border-slate-200">
                 CEO'S MESSAGE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
-                MURINZI AHORUKOMEYE <br /> <span className="text-primary italic">Bertin</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] mb-6 leading-tight tracking-tight">
+                MURINZI AHORUKOMEYE <br /> <span className="italic opacity-80">Bertin</span>
               </h2>
               <p className="text-lg text-slate-600 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Leading with vision, integrity, and a commitment to transforming logistics in Rwanda and beyond.
@@ -49,14 +40,11 @@ const CeoSection = () => {
             </div>
 
             {/* Main Message Block */}
-            <div className="relative p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 shadow-sm mb-12 overflow-hidden group">
-               <div className="absolute -top-6 -right-6 opacity-[0.05] group-hover:scale-110 transition-transform duration-700">
-                <p className="text-[100px] font-serif font-black text-primary">"</p>
-              </div>
-              <p className="relative z-10 text-xl text-slate-900 italic leading-relaxed font-light">
+            <div className="relative p-10 rounded-[2rem] bg-slate-50 border border-slate-100 shadow-sm mb-12 overflow-hidden group">
+              <p className="relative z-10 text-xl text-[#0A1437] italic leading-relaxed font-light">
                 "At TekAccess, we believe logistics is more than movement, it is trust, precision, and responsibility in action. Every client, any delivery, and every partnership is an opportunity to demonstrate excellence."
               </p>
-              <div className="my-8 h-px w-12 bg-primary/20" />
+              <div className="my-8 h-px w-12 bg-[#0A1437]/20" />
               <p className="relative z-10 text-slate-600 leading-relaxed font-light">
                 We are committed to building solutions that strengthen industries, empower communities, and contribute to Rwanda’s growth story. Thank you for trusting us to move your world.
               </p>
@@ -71,7 +59,7 @@ const CeoSection = () => {
               ].map((item, idx) => (
                 <div key={idx} className="space-y-1">
                   <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">{item.label}</p>
-                  <p className="text-2xl font-black text-primary">{item.val}</p>
+                  <p className="text-2xl font-black text-[#0A1437]">{item.val}</p>
                 </div>
               ))}
             </div>

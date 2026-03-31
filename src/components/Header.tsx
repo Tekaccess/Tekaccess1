@@ -39,22 +39,33 @@ const Header = () => {
       {/* Promo Banner */}
       <div className="bg-primary py-2 px-4 text-center">
         <p className="text-[10px] sm:text-xs font-bold text-white uppercase tracking-[0.2em]">
-          Efficient. Reliable. Scalable. <span className="hidden sm:inline opacity-70">— Your Trusted Partner in Logistics & Supply Solutions.</span>
+          Efficient. Reliable. Scalable.{" "}
+          <span className="hidden sm:inline opacity-70">
+            — Your Trusted Partner in Logistics & Supply Solutions.
+          </span>
         </p>
       </div>
 
       {/* Main Navigation */}
-      <header className={`w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white py-4"
-        }`}>
+      <header
+        className={`w-full transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md shadow-md py-2"
+            : "bg-white py-2"
+        }`}
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center shrink-0">
-              <a href="#" className="transition-transform duration-300 hover:scale-105">
+              <a
+                href="#"
+                className="transition-transform duration-300 hover:scale-105"
+              >
                 <img
                   src={logo}
                   alt="TekAccess Logo"
-                  className="h-9 sm:h-11 w-auto object-contain rounded-md"
+                  className="h-14 sm:h-14 object-contain rounded-md"
                 />
               </a>
             </div>
@@ -116,8 +127,11 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`absolute left-0 right-0 top-full transition-all duration-500 ease-in-out ${mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
-            }`}
+          className={`absolute left-0 right-0 top-full transition-all duration-500 ease-in-out ${
+            mobileMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-4 opacity-0 pointer-events-none"
+          }`}
         >
           <nav className="border-t border-slate-100 bg-white shadow-2xl p-6">
             <div className="flex flex-col gap-3">
@@ -133,7 +147,7 @@ const Header = () => {
               ))}
               <div className="my-4 h-px bg-slate-100" />
               <button
-                onClick={() => window.location.href = "/login.html"}
+                onClick={() => (window.location.href = "/login.html")}
                 className="gradient-btn w-full flex items-center justify-center gap-3 p-5 text-base"
               >
                 <Lock className="h-5 w-5" />
