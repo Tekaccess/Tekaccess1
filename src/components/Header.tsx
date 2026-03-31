@@ -123,7 +123,7 @@ const Header = () => {
 
             {/* Desktop Right Actions */}
             <div className="hidden items-center gap-4 lg:flex shrink-0">
-              <div className="flex items-center gap-1 mr-2 border-slate-200 pr-4">
+              <div className="flex items-center gap-1">
                 <button className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary">
                   <Globe className="h-4 w-4" />
                 </button>
@@ -168,22 +168,12 @@ const Header = () => {
                 ) : (
                   <button
                     onClick={() => navigate("/login")}
-                    className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary"
+                    className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-[#0A1437] hover:text-white"
                   >
                     <User className="h-4 w-4" />
                   </button>
                 )}
               </div>
-
-              <button
-                onClick={() => navigate(isLoggedIn ? "/dashboard" : "/login")}
-                className="gradient-btn text-xs px-6 py-2 shadow-sm"
-              >
-                <span className="flex items-center gap-2">
-                  <Lock className="h-3.5 w-3.5" />
-                  {isLoggedIn ? "Dashboard" : "Manager Portal"}
-                </span>
-              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -231,7 +221,7 @@ const Header = () => {
                       navigate("/dashboard");
                       setMobileMenuOpen(false);
                     }}
-                    className="gradient-btn w-full flex items-center justify-center gap-3 p-5 text-base"
+                    className="w-full flex items-center justify-center gap-3 px-6 py-5 bg-[#0A1437] text-white rounded-2xl font-bold hover:bg-[#0A1437]/90 transition-colors"
                   >
                     <Lock className="h-5 w-5" />
                     Dashboard
@@ -250,10 +240,10 @@ const Header = () => {
                     navigate("/login");
                     setMobileMenuOpen(false);
                   }}
-                  className="gradient-btn w-full flex items-center justify-center gap-3 p-5 text-base"
+                  className="w-full flex items-center justify-center gap-3 px-6 py-5 bg-[#0A1437] text-white rounded-2xl font-bold hover:bg-[#0A1437]/90 transition-colors"
                 >
-                  <Lock className="h-5 w-5" />
-                  Manager Portal
+                  <User className="h-5 w-5" />
+                  Sign In
                 </button>
               )}
             </div>
