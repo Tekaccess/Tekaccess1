@@ -21,13 +21,16 @@ const Hero = () => {
       const offsetPosition = elementPosition + window.scrollY - offset;
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
 
   return (
-    <section id="home" className="dark relative min-h-screen w-full overflow-hidden bg-[#030303]">
+    <section
+      id="home"
+      className="dark relative min-h-screen w-full overflow-hidden bg-[#030303]"
+    >
       {/* Cinematic Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -46,19 +49,19 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex min-h-screen items-center justify-center pt-20">
-        <div className="max-w-4xl text-center">
-          <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-
-
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
-              End-to-End <br />
-              <span className="text-primary italic">Logistics</span> You <br />
-              Can Trust.
+        <div className="max-w-3xl bg-red-00 text-center">
+          <div
+            className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          >
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tight leading-tight">
+              End-to-End <span className="text-primary italic">Logistics</span>{" "}
+              You Can Trust.
             </h1>
 
             <p className="text-base sm:text-lg text-white/60 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              On Time, Every Time. Experience peak supply chain efficiency with TekAccess.
-              Our precision-led logistics solutions empower your business to move faster and further.
+              On Time, Every Time. Experience peak supply chain efficiency with
+              TekAccess. Our precision-led logistics solutions empower your
+              business to move faster and further.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -78,7 +81,6 @@ const Hero = () => {
                 <ChevronRight className="h-5 w-5 opacity-40 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-
           </div>
         </div>
       </div>

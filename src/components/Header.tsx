@@ -65,7 +65,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="TekAccess Logo"
-                  className="h-14 sm:h-14 object-contain rounded-md"
+                  className="h-16 sm:h-16 object-contain rounded-md"
                 />
               </a>
             </div>
@@ -88,7 +88,7 @@ const Header = () => {
 
             {/* Desktop Right Actions */}
             <div className="hidden items-center gap-4 lg:flex shrink-0">
-              <div className="flex items-center gap-1 mr-2 border-r border-slate-200 pr-4">
+              <div className="flex items-center gap-1 mr-2  border-slate-200 pr-4">
                 <button className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary">
                   <Globe className="h-4 w-4" />
                 </button>
