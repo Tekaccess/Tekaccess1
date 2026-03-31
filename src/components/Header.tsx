@@ -43,9 +43,9 @@ const Header = () => {
         </p>
       </div>
 
-      {/* Main Navigation - Forced Dark Theme for Contrast */}
-      <header className={`w-full transition-all duration-300 ${isScrolled ? "bg-white shadow-2xl py-2" : "bg-white py-4"
-        } backdrop-blur-md`}>
+      {/* Main Navigation */}
+      <header className={`w-full transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white py-4"
+        }`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -54,7 +54,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="TekAccess Logo"
-                  className="h-10 sm:h-12 w-auto object-contain brightness-110 contrast-125 rounded-md"
+                  className="h-9 sm:h-11 w-auto object-contain rounded-md"
                 />
               </a>
             </div>
@@ -66,10 +66,10 @@ const Header = () => {
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="relative group px-4 py-2 text-sm font-semibold text-black transition-colors duration-300 hover:text-[#007bff] whitespace-nowrap"
+                    className="relative group px-4 py-2 text-sm font-bold text-slate-700 transition-colors duration-300 hover:text-primary whitespace-nowrap"
                   >
                     {link.label}
-                    <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-1/2 group-hover:left-1/4"></span>
+                    <span className="absolute bottom-1 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-px group-hover:left-1/2 group-hover:scale-x-[20]"></span>
                   </button>
                 ))}
               </div>
@@ -77,35 +77,37 @@ const Header = () => {
 
             {/* Desktop Right Actions */}
             <div className="hidden items-center gap-4 lg:flex shrink-0">
-              <div className="flex items-center gap-1 mr-2 border-r border-white/10 pr-4">
-                <button className="flex h-9 w-9 items-center justify-center rounded-full text-white/40 transition-colors hover:bg-white/10 hover:text-white">
+              <div className="flex items-center gap-1 mr-2 border-r border-slate-200 pr-4">
+                <button className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary">
                   <Globe className="h-4 w-4" />
                 </button>
-                <button className="flex h-9 w-9 items-center justify-center rounded-full text-white/40 transition-colors hover:bg-white/10 hover:text-white">
+                <button className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-primary">
                   <User className="h-4 w-4" />
                 </button>
               </div>
 
-              <button
+              {/* <button
                 onClick={() => window.location.href = "/login.html"}
-                className="group relative flex items-center gap-2 overflow-hidden rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:opacity-90 shadow-lg shadow-primary/20"
+                className="gradient-btn text-xs px-6 py-2 shadow-sm"
               >
-                <Lock className="h-4 w-4" />
-                <span>Manager Portal</span>
-              </button>
+                <span className="flex items-center gap-2">
+                  <Lock className="h-3.5 w-3.5" />
+                  Manager Portal
+                </span>
+              </button> */}
             </div>
 
             {/* Mobile Menu Button */}
             <div className="flex items-center gap-2 lg:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 text-slate-600 hover:bg-slate-100 transition-colors"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
-                  <X className="h-5 w-5 text-white" />
+                  <X className="h-5 w-5" />
                 ) : (
-                  <Menu className="h-5 w-5 text-white" />
+                  <Menu className="h-5 w-5" />
                 )}
               </button>
             </div>
@@ -117,22 +119,22 @@ const Header = () => {
           className={`absolute left-0 right-0 top-full transition-all duration-500 ease-in-out ${mobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-4 opacity-0 pointer-events-none"
             }`}
         >
-          <nav className="border-t border-white/5 bg-slate-900 shadow-2xl p-4">
-            <div className="flex flex-col gap-2">
+          <nav className="border-t border-slate-100 bg-white shadow-2xl p-6">
+            <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => scrollToSection(link.href)}
-                  className="flex items-center justify-between rounded-2xl px-5 py-4 text-left text-base font-medium text-white/70 transition-all duration-300 hover:bg-white/5 hover:text-white"
+                  className="flex items-center justify-between rounded-2xl px-6 py-4 text-left text-base font-bold text-slate-600 transition-all duration-300 hover:bg-slate-50 hover:text-primary"
                 >
                   {link.label}
                   <div className="h-1.5 w-1.5 rounded-full bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </button>
               ))}
-              <div className="my-3 h-px bg-white/5" />
+              <div className="my-4 h-px bg-slate-100" />
               <button
                 onClick={() => window.location.href = "/login.html"}
-                className="flex w-full items-center justify-center gap-3 rounded-2xl bg-primary p-4 text-base font-bold text-white transition-all duration-300 shadow-lg"
+                className="gradient-btn w-full flex items-center justify-center gap-3 p-5 text-base"
               >
                 <Lock className="h-5 w-5" />
                 Manager Portal

@@ -15,53 +15,55 @@ const Footer = () => {
   };
 
   return (
-    <footer className="section-footer relative mt-20 border-t border-border/50 px-4 py-16 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Unique background - Subtle radial gradient */}
+    <footer className="section-footer relative border-t border-slate-100 px-4 py-20 sm:px-6 lg:px-8 overflow-hidden bg-white">
+      {/* Background layer */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/3 to-transparent" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-gradient-radial from-primary/5 to-transparent blur-3xl" />
+        <div className="absolute inset-0 bg-slate-50/50" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-primary/5 blur-[120px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-16 md:grid-cols-3 lg:gap-24">
           {/* Brand */}
-          <div>
-            <div className="mb-4">
+          <div className="space-y-8">
+            <div className="group inline-block">
               <img 
                 src={logo} 
                 alt="TekAccess Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </div>
-            <p className="text-muted-foreground">
-              Providing innovative logistics solutions with efficiency,
-              reliability, and customer satisfaction at our core.
+            <p className="text-slate-600 font-light leading-relaxed max-w-xs">
+              Empowering global trade with innovative logistics solutions, precision analytics, and unwavering reliability.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="mb-4 font-semibold text-foreground">Quick Links</h4>
-            <div className="flex flex-col gap-3">
-              {["#services", "#about", "#team", "#blogs", "#contact"].map((href) => (
+          <div className="space-y-8">
+            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-widest">Digital Navigation</h4>
+            <div className="flex flex-col gap-4">
+              {[
+                { name: "Services", href: "#services" },
+                { name: "About Us", href: "#about" },
+                { name: "Leadership", href: "#team" },
+                { name: "Insights", href: "#blogs" },
+                { name: "Contact", href: "#contact" }
+              ].map((link) => (
                 <button
-                  key={href}
-                  onClick={() => scrollToSection(href)}
-                  className="text-left text-muted-foreground transition-colors hover:text-primary"
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-left text-sm text-slate-500 transition-all duration-300 hover:text-primary hover:translate-x-1 font-light"
                 >
-                  {href.replace("#", "").charAt(0).toUpperCase() +
-                    href.slice(2)}
+                  {link.name}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Social */}
-          <div>
-            <h4 className="mb-4 font-semibold text-foreground">
-              Connect With Us
-            </h4>
-            <div className="flex gap-3">
+          {/* Connect */}
+          <div className="space-y-8">
+            <h4 className="text-xs font-bold text-slate-900 uppercase tracking-widest">Connect with Us</h4>
+            <div className="flex gap-4">
               {[
                 { icon: Facebook, href: "https://www.facebook.com/people/TekAccess-Ltd/", label: "Facebook" },
                 { icon: Twitter, href: "https://twitter.com/Tekaccessltd", label: "Twitter" },
@@ -74,20 +76,28 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="glass-card flex h-10 w-10 items-center justify-center transition-all duration-300 hover:bg-primary/10 hover:border-primary/30 hover:scale-110"
+                  className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white border border-slate-100 text-slate-400 transition-all duration-500 hover:bg-primary hover:text-white hover:border-primary hover:-translate-y-1 shadow-sm"
                 >
-                  <social.icon className="h-4 w-4 text-muted-foreground" />
+                  <social.icon className="h-5 w-5" />
                 </a>
               ))}
+            </div>
+            <div className="pt-4">
+               <p className="text-[10px] text-slate-400 uppercase tracking-[0.2em] font-bold">TekAccess Global HQ</p>
+               <p className="text-sm text-slate-500 mt-2 font-light">Kigali, Rwanda</p>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 border-t border-border/50 pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} TekAccess Logistics. All rights reserved.
+        <div className="mt-20 pt-10 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">
+            &copy; {currentYear} TekAccess Ltd. All rights reserved.
           </p>
+          <div className="flex gap-8">
+             <button className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Privacy Policy</button>
+             <button className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] hover:text-primary transition-colors">Terms of Service</button>
+          </div>
         </div>
       </div>
     </footer>

@@ -162,9 +162,12 @@ const Team = () => {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 flex items-end justify-between">
+        <div className="mb-20 flex items-end justify-between">
           <div className="text-left">
-            <h2 className="relative mb-6 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-slate-900">
+            <span className="inline-block text-primary font-bold text-xs tracking-widest uppercase mb-6 px-3 py-1 bg-primary/10 rounded-full">
+              VISIONARY LEADERS
+            </span>
+            <h2 className="relative mb-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
               Our Leadership <br />
               <span className="text-primary italic">Team</span>
             </h2>
@@ -178,17 +181,17 @@ const Team = () => {
           <div className="hidden sm:flex items-center gap-4">
             <button
               onClick={() => scrollTo('left')}
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-slate-200 bg-white/50 backdrop-blur-sm transition-all hover:bg-primary hover:text-white hover:border-primary group"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white/50 backdrop-blur-sm transition-all hover:bg-primary hover:text-white hover:border-primary group"
               aria-label="Previous"
             >
-              <ChevronLeft className="h-6 w-6 transition-transform group-hover:-translate-x-1" />
+              <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
             </button>
             <button
               onClick={() => scrollTo('right')}
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-slate-200 bg-white/50 backdrop-blur-sm transition-all hover:bg-primary hover:text-white hover:border-primary group"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white/50 backdrop-blur-sm transition-all hover:bg-primary hover:text-white hover:border-primary group"
               aria-label="Next"
             >
-              <ChevronRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
+              <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
         </div>
@@ -205,7 +208,7 @@ const Team = () => {
               <div
                 key={member.id}
                 onClick={() => openMemberProfile(member)}
-                className="relative flex-shrink-0 w-[300px] sm:w-[340px] h-[500px] sm:h-[580px] rounded-[2.5rem] overflow-hidden snap-center group cursor-pointer transition-all duration-700 hover:scale-[0.98] border border-slate-200 shadow-xl bg-slate-50"
+                className="relative flex-shrink-0 w-[300px] sm:w-[340px] h-[500px] sm:h-[580px] rounded-[2rem] overflow-hidden snap-center group cursor-pointer transition-all duration-700 hover:scale-[0.98] border border-slate-200 shadow-xl bg-slate-50"
               >
                 {/* Full Image Background with Grayscale Float Effect */}
                 <img
@@ -223,9 +226,9 @@ const Team = () => {
                 </div>
                 
                 {/* Content at Bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white transition-transform duration-500 group-hover:-translate-y-2">
-                  <p className="text-primary font-bold text-xs uppercase tracking-[0.2em] mb-2 drop-shadow-sm">{member.position}</p>
-                  <h4 className="text-2xl font-extrabold mb-3 leading-tight drop-shadow-md">
+                <div className="absolute bottom-0 left-0 right-0 p-10 text-white transition-transform duration-500 group-hover:-translate-y-2">
+                  <p className="text-primary font-bold text-[10px] uppercase tracking-[0.2em] mb-3 drop-shadow-sm">{member.position}</p>
+                  <h4 className="text-2xl font-extrabold mb-4 leading-tight drop-shadow-md">
                     {member.name}
                   </h4>
                   <p className="text-sm text-white/80 font-light line-clamp-3 opacity-0 translate-y-8 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
@@ -238,7 +241,7 @@ const Team = () => {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center gap-3 mt-6">
+        <div className="flex justify-center gap-3 mt-10">
           {team.map((_, index) => (
             <button
               key={index}
@@ -263,7 +266,7 @@ const Team = () => {
 
       {/* Team Member Profile Modal */}
       <Dialog open={!!selectedMember} onOpenChange={(open) => !open && closeMemberProfile()}>
-        <DialogContent className="max-w-5xl p-0 overflow-hidden bg-white border-0 rounded-[3rem] animate-in zoom-in-95 duration-500 shadow-2xl">
+        <DialogContent className="max-w-5xl p-0 overflow-hidden bg-white border-0 rounded-[2.5rem] animate-in zoom-in-95 duration-500 shadow-2xl">
           {selectedMember && (
             <div className="flex flex-col lg:flex-row min-h-[600px]">
               {/* Image Side */}
@@ -283,7 +286,7 @@ const Team = () => {
               </div>
 
               {/* Content Side */}
-              <div className="lg:w-3/5 p-10 lg:p-16 flex flex-col justify-center bg-slate-50 relative">
+              <div className="lg:w-3/5 p-12 lg:p-20 flex flex-col justify-center bg-slate-50 relative">
                 {/* Close Button */}
                 <button
                   onClick={closeMemberProfile}
@@ -294,18 +297,18 @@ const Team = () => {
                 </button>
 
                 {/* Name & Title - Desktop */}
-                <div className="hidden lg:block mb-10">
-                   <p className="text-primary font-bold text-sm uppercase tracking-widest mb-3">Leadership Profile</p>
-                  <h3 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">{selectedMember.name}</h3>
-                  <p className="text-xl text-slate-600 font-light italic">{selectedMember.position}</p>
+                <div className="hidden lg:block mb-12">
+                   <p className="text-primary font-bold text-xs uppercase tracking-widest mb-4">Leadership Profile</p>
+                  <h3 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">{selectedMember.name}</h3>
+                  <p className="text-lg text-slate-600 font-light italic">{selectedMember.position}</p>
                 </div>
 
                 {/* Bio / About */}
-                <div className="space-y-8">
+                <div className="space-y-10">
                   <div>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="h-1 w-8 bg-primary rounded-full" />
-                      <h4 className="font-bold text-slate-900 tracking-widest text-xs uppercase">About</h4>
+                      <h4 className="font-bold text-slate-900 tracking-widest text-[10px] uppercase">About</h4>
                     </div>
                     <p className="text-slate-600 text-lg leading-relaxed font-light">
                       {selectedMember.about}
@@ -315,9 +318,9 @@ const Team = () => {
                   <div>
                     <div className="flex items-center gap-3 mb-4">
                       <div className="h-1 w-8 bg-primary rounded-full opacity-50" />
-                      <h4 className="font-bold text-slate-700 tracking-widest text-xs uppercase">Vision</h4>
+                      <h4 className="font-bold text-slate-700 tracking-widest text-[10px] uppercase">Vision</h4>
                     </div>
-                    <p className="text-slate-600 italic leading-relaxed font-light">
+                    <p className="text-slate-600 italic leading-relaxed font-light text-base">
                       "{selectedMember.bio}"
                     </p>
                   </div>

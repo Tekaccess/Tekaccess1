@@ -122,36 +122,41 @@ const Blogs = () => {
     : blogs.filter(blog => blog.category === activeCategory);
 
   return (
-    <section id="blogs" className="section-blogs relative px-4 py-20 sm:px-6 lg:px-8 overflow-hidden bg-muted/20">
-      {/* Background */}
+    <section id="blogs" className="section-blogs relative px-4 py-32 sm:px-6 lg:px-8 overflow-hidden bg-white">
+      {/* Background layer */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background" />
+        <div className="absolute inset-0 bg-white" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50 opacity-40" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="mb-8 text-center">
-          <h2 className="relative mb-4 inline-block text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-            <span className="text-foreground">Latest </span>
-            <span className="gradient-text">Insights</span>
+        <div className="mb-20 text-center">
+          <span className="inline-block text-primary font-bold text-xs tracking-widest uppercase mb-6 px-3 py-1 bg-primary/10 rounded-full">
+            FIELD ANALYSIS & INSIGHTS
+          </span>
+          <h2 className="relative mb-6 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
+            Latest <br />
+            <span className="text-primary italic">Insights</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Stay updated with the latest trends in logistics and supply chain
+          <p className="mx-auto mt-4 max-w-2xl text-slate-600 text-lg font-light leading-relaxed">
+            Stay updated with the latest trends and innovations in the logistics and supply chain industry.
           </p>
+          <div className="mt-10 h-1.5 w-24 bg-primary mx-auto rounded-full" />
         </div>
 
         {/* Category Tabs */}
         {!loading && !error && blogs.length > 0 && (
-          <div className="mb-10 flex justify-center">
-            <div className="inline-flex flex-wrap justify-center gap-2 p-1.5 rounded-2xl bg-muted/50 backdrop-blur-sm">
+          <div className="mb-20 flex justify-center">
+            <div className="inline-flex flex-wrap justify-center gap-3 p-2 rounded-full bg-slate-50 border border-slate-100 shadow-sm">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                  className={`px-7 py-2.5 rounded-full text-xs font-bold transition-all duration-500 uppercase tracking-widest ${
                     activeCategory === category
-                      ? 'bg-primary text-primary-foreground shadow-lg'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-background/50'
+                      ? 'bg-primary text-white shadow-xl shadow-primary/20 scale-105'
+                      : 'text-slate-500 hover:text-primary hover:bg-white'
                   }`}
                 >
                   {category}
@@ -164,67 +169,34 @@ const Blogs = () => {
         {/* Loading State */}
         {loading && (
           <div className="flex flex-col items-center justify-center py-20">
-            <div className="glass-spinner" />
-            <p className="mt-4 text-muted-foreground">Loading blog posts...</p>
-          </div>
-        )}
-
-        {/* Error State */}
-        {error && !loading && (
-          <div className="glass-card mx-auto max-w-md p-8 text-center border border-destructive/20">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-destructive/10">
-              <Newspaper className="h-8 w-8 text-destructive" />
-            </div>
-            <h3 className="mb-2 text-lg font-semibold text-foreground">
-              Oops! Something went wrong
-            </h3>
-            <p className="mb-4 text-muted-foreground">{error}</p>
-            <button onClick={loadBlogs} className="gradient-btn text-sm">
-              Try Again
-            </button>
-          </div>
-        )}
-
-        {/* Empty State */}
-        {!loading && !error && blogs.length === 0 && (
-          <div className="glass-card mx-auto max-w-md p-12 text-center border-2 border-dashed border-primary/30">
-            <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-              <Newspaper className="h-10 w-10 text-white" />
-            </div>
-            <h3 className="mb-2 text-xl font-semibold text-foreground">
-              Blog Coming Soon!
-            </h3>
-            <p className="text-muted-foreground">
-              We're working on our first blog post. Check back soon for industry
-              insights.
-            </p>
+            <div className="h-10 w-10 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+            <p className="mt-6 text-slate-400 font-bold text-xs uppercase tracking-widest">Compiling field data...</p>
           </div>
         )}
 
         {/* Blogs Grid */}
         {!loading && !error && filteredBlogs.length > 0 && (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {filteredBlogs.map((blog, index) => (
               <div
                 key={`${blog.collection}-${blog.id}`}
-                className="group relative bg-card rounded-3xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group relative bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 hover:border-primary/20 transition-all duration-700 hover:shadow-2xl hover:shadow-slate-200/50 hover:-translate-y-2"
               >
                 {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={blog.imageUrl || fallbackImages.blog}
                     alt={getTitle(blog)}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale group-hover:grayscale-0 opacity-90 group-hover:opacity-100"
                     onError={(e) => {
                       e.currentTarget.src = fallbackImages.blog;
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
                   
                   {blog.category && (
-                    <div className="absolute left-4 top-4">
-                      <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-lg">
+                    <div className="absolute left-6 top-6">
+                      <span className="rounded-full bg-white/90 backdrop-blur-xl px-4 py-2 text-[10px] font-bold text-primary shadow-lg border border-white/20 uppercase tracking-[0.2em]">
                         {blog.category}
                       </span>
                     </div>
@@ -232,34 +204,28 @@ const Blogs = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-10">
                   {/* Meta */}
-                  <div className="mb-3 flex items-center gap-4 text-xs text-muted-foreground">
-                    <div className="flex items-center gap-1.5">
-                      <Calendar className="h-3.5 w-3.5" />
+                  <div className="mb-6 flex items-center gap-6 text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em]">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-primary opacity-60" />
                       {formatDate(blog.date)}
                     </div>
-                    {blog.author && (
-                      <div className="flex items-center gap-1.5">
-                        <User className="h-3.5 w-3.5" />
-                        {blog.author}
-                      </div>
-                    )}
                   </div>
 
-                  <h3 className="mb-3 text-lg font-bold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+                  <h3 className="mb-4 text-2xl font-bold text-slate-900 group-hover:text-primary transition-colors leading-tight tracking-tight">
                     {getTitle(blog)}
                   </h3>
-                  <p className="mb-4 text-sm text-muted-foreground line-clamp-2">
+                  <p className="mb-10 text-slate-600 text-sm font-light leading-relaxed line-clamp-2">
                     {getPreview(blog)}
                   </p>
 
                   <button
                     onClick={() => setSelectedBlog(blog)}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all group-hover:gap-3"
+                    className="inline-flex items-center gap-3 text-[10px] font-bold text-primary uppercase tracking-[0.2em] group/btn"
                   >
-                    Read More
-                    <ArrowRight className="h-4 w-4" />
+                    CONTINUE READING
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-2" />
                   </button>
                 </div>
               </div>
@@ -267,74 +233,63 @@ const Blogs = () => {
           </div>
         )}
 
-        {/* No results for filter */}
-        {!loading && !error && blogs.length > 0 && filteredBlogs.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">No posts found in this category.</p>
-          </div>
-        )}
-
-        {/* Blog Modal */}
+        {/* Modal */}
         {selectedBlog && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/40 backdrop-blur-md p-4 animate-in fade-in duration-500"
             onClick={() => setSelectedBlog(null)}
           >
             <div
-              className="relative bg-card max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-border shadow-2xl"
+              className="relative bg-white max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-[2.5rem] shadow-[0_32px_128px_rgba(0,0,0,0.15)] animate-in zoom-in-95 duration-700"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close button */}
+              {/* Close Button */}
               <button
                 onClick={() => setSelectedBlog(null)}
-                className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-colors hover:bg-background"
+                className="absolute right-8 top-8 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-300 hover:text-primary hover:border-primary border border-slate-100 transition-all shadow-xl"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              {/* Modal Image */}
-              {selectedBlog.imageUrl && (
-                <img
-                  src={selectedBlog.imageUrl}
-                  alt={getTitle(selectedBlog)}
-                  className="h-72 w-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = fallbackImages.blog;
-                  }}
-                />
-              )}
-
-              {/* Modal Content */}
-              <div className="p-8">
-                {/* Meta */}
-                <div className="mb-6 flex flex-wrap items-center gap-4">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
-                    {formatDate(selectedBlog.date)}
-                  </div>
-                  {selectedBlog.author && (
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <User className="h-4 w-4" />
-                      {selectedBlog.author}
-                    </div>
-                  )}
-                  {selectedBlog.category && (
-                    <span className="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                      {selectedBlog.category}
-                    </span>
-                  )}
+              <div className="flex flex-col">
+                <div className="h-80 w-full overflow-hidden">
+                  <img
+                    src={selectedBlog.imageUrl || fallbackImages.blog}
+                    alt={getTitle(selectedBlog)}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
 
-                <h2 className="mb-6 text-2xl font-bold text-foreground sm:text-3xl">
-                  {getTitle(selectedBlog)}
-                </h2>
+                <div className="p-12 sm:p-24">
+                  <div className="mb-8 flex flex-wrap items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+                    <div className="flex items-center gap-3">
+                      <Calendar className="h-5 w-5 text-primary opacity-60" />
+                      {formatDate(selectedBlog.date)}
+                    </div>
+                    {selectedBlog.author && (
+                      <div className="flex items-center gap-3">
+                        <User className="h-5 w-5 text-primary opacity-60" />
+                        {selectedBlog.author}
+                      </div>
+                    )}
+                    {selectedBlog.category && (
+                      <span className="px-5 py-2 bg-slate-50 rounded-full text-primary border border-slate-100">
+                        {selectedBlog.category}
+                      </span>
+                    )}
+                  </div>
 
-                <div
-                  className="prose prose-lg max-w-none text-foreground/90"
-                  dangerouslySetInnerHTML={{
-                    __html: getContent(selectedBlog) || "No content available.",
-                  }}
-                />
+                  <h2 className="mb-10 text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
+                    {getTitle(selectedBlog)}
+                  </h2>
+
+                  <div
+                    className="prose prose-slate prose-lg max-w-none text-slate-600 font-light leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: getContent(selectedBlog) || "Editorial content coming soon.",
+                    }}
+                  />
+                </div>
               </div>
             </div>
           </div>

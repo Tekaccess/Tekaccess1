@@ -45,29 +45,26 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex min-h-screen items-center pt-20">
-        <div className="max-w-4xl">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex min-h-screen items-center justify-center pt-20">
+        <div className="max-w-4xl text-center">
           <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
-              <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-bold text-white/80 uppercase tracking-widest">Global Logistics Excellence</span>
-            </div>
 
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.95]">
+
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
               End-to-End <br />
               <span className="text-primary italic">Logistics</span> You <br />
-               Can Trust.
+              Can Trust.
             </h1>
 
-            <p className="text-lg sm:text-xl text-white/60 mb-12 max-w-2xl font-light leading-relaxed">
-              On Time, Every Time. Experience peak supply chain efficiency with TekAccess. 
+            <p className="text-base sm:text-lg text-white/60 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              On Time, Every Time. Experience peak supply chain efficiency with TekAccess.
               Our precision-led logistics solutions empower your business to move faster and further.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-6 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
               <button
                 onClick={() => scrollToSection("#services")}
-                className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-primary px-10 py-5 font-bold text-white transition-all duration-300 hover:scale-105 shadow-2xl shadow-primary/30"
+                className="group relative flex items-center justify-center gap-2 overflow-hidden rounded-full bg-primary px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-105 shadow-2xl shadow-primary/30 w-full sm:w-auto"
               >
                 Our Services
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -75,38 +72,15 @@ const Hero = () => {
 
               <button
                 onClick={() => scrollToSection("#contact")}
-                className="flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-10 py-5 font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 shadow-xl"
+                className="flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/5 px-8 py-4 font-bold text-white backdrop-blur-md transition-all duration-300 hover:bg-white/10 shadow-xl w-full sm:w-auto"
               >
                 Get in Touch
                 <ChevronRight className="h-5 w-5 opacity-40 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-              {[
-                "Global Freight Solutions",
-                "Real-time Tracking & Visibility",
-                "Scalable Supply Chain Strategy",
-                "24/7 Priority Support"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 group">
-                  <CheckCircle2 className="h-5 w-5 text-primary transition-transform group-hover:scale-110" />
-                  <span className="text-sm sm:text-base font-medium text-white/70">{item}</span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:block">
-        <button
-          onClick={() => scrollToSection("#about")}
-          className="flex flex-col items-center gap-4 animate-bounce opacity-40"
-        >
-          <span className="text-[10px] text-white uppercase tracking-[0.45em] font-bold">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-white to-transparent" />
-        </button>
       </div>
     </section>
   );
