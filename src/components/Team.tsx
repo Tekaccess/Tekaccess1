@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight, X, Linkedin, Twitter } from "lucide-react";
+import { ChevronLeft, ChevronRight, Linkedin, Twitter } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import useFirebase from "@/hooks/useFirebase";
 import ceoImage from "@/assets/ceo.jpg";
@@ -268,16 +268,10 @@ const Team = () => {
                     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?aut=format&fit=crop&w=800&q=80"
                   }
                   alt={selectedMember.name}
-                  className="w-full h-full object-cover grayscale"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="md:w-3/5 p-12 lg:p-16 flex flex-col justify-center bg-white relative">
-                <button
-                  onClick={() => setSelectedMember(null)}
-                  className="absolute top-8 right-8 text-slate-400 hover:text-[#0A1437] transition-colors"
-                >
-                  <X className="h-6 w-6" />
-                </button>
                 <div className="mb-8">
                   <span className="inline-block text-[#0A1437] font-bold text-xs tracking-widest uppercase mb-4 px-3 py-1 bg-slate-100 rounded-full">
                     {selectedMember.position}
