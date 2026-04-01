@@ -11,6 +11,7 @@ interface TeamMember {
   about?: string;
   bio?: string;
   imageUrl?: string;
+  linkedinUrl?: string;
 }
 
 const Team = () => {
@@ -31,6 +32,7 @@ const Team = () => {
           "Founder of TekAccess with a vision to revolutionize the logistics industry in Rwanda through innovation and integrity.",
         bio: "At TekAccess, we believe logistics is more than movement, it is trust and responsibility in action.",
         imageUrl: ceoImage,
+        linkedinUrl: "https://www.linkedin.com/in/murinzi-jimmy-bertin-95b561161/",
       },
       {
         id: "rayan",
@@ -39,6 +41,7 @@ const Team = () => {
         about:
           "Oversees operations and business development, manages logistics workflows and premium customer experiences.",
         bio: "Commitment to operational excellence bridges the gap between ambitious goals and successful deliveries.",
+        linkedinUrl: "https://www.linkedin.com/in/rayan-ken-nsonera-726510170/",
       },
       {
         id: "alban",
@@ -47,6 +50,7 @@ const Team = () => {
         about:
           "Ensures sound financial planning, compliance, and resource management, driving financial integrity.",
         bio: "Dedicated to building a robust financial foundation that supports sustainable growth.",
+        linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
       },
       {
         id: "keyla",
@@ -55,6 +59,7 @@ const Team = () => {
         about:
           "Supports coordination and monitoring of daily operations, administrative efficiency with organization and dedication.",
         bio: "Ensuring that the heart of TekAccess beats with precision and care.",
+        linkedinUrl: "https://www.linkedin.com/in/keyla-keza-146475279/",
       },
       {
         id: "kevine",
@@ -63,6 +68,7 @@ const Team = () => {
         about:
           "Manages daily operations and ensures smooth execution of logistics workflows with precision and efficiency.",
         bio: "Dedicated to optimizing operational processes for exceptional service delivery.",
+        linkedinUrl: "https://www.linkedin.com/in/uwase-murenzi-kevine-02bb18315/",
       },
       {
         id: "richard",
@@ -71,6 +77,7 @@ const Team = () => {
         about:
           "Oversees procurement strategies and supplier relationships, ensuring quality and cost-effective sourcing.",
         bio: "Committed to building strong partnerships and securing the best resources for TekAccess.",
+        linkedinUrl: "https://www.linkedin.com/in/richard-mugabo-645180291/",
       },
       {
         id: "joy",
@@ -79,6 +86,7 @@ const Team = () => {
         about:
           "Manages technology infrastructure and digital systems, driving innovation through technical excellence.",
         bio: "Passionate about leveraging technology to solve complex logistics challenges.",
+        linkedinUrl: "https://www.linkedin.com/in/joy-ntizimira-20651930b/",
       },
     ];
 
@@ -121,6 +129,7 @@ const Team = () => {
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
               bio: dbMember.bio || member.bio,
+              linkedinUrl: dbMember.linkedinUrl || member.linkedinUrl,
             };
           }
           return member;
@@ -233,7 +242,10 @@ const Team = () => {
                       </p>
                     </div>
                     <a
-                      href="#"
+                      href={member.linkedinUrl || "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="flex-shrink-0 h-10 w-10 flex items-center justify-center rounded-full bg-slate-100 text-[#0A1437] hover:bg-[#0A1437] hover:text-white transition-all"
                     >
                       <Linkedin className="h-5 w-5" />
@@ -296,12 +308,16 @@ const Team = () => {
                   {selectedMember.about}
                 </p>
                 <div className="flex gap-4">
-                  <a
-                    href="#"
-                    className="h-12 w-12 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-[#0A1437] hover:text-white transition-all"
-                  >
-                    <Linkedin className="h-5 w-5" />
-                  </a>
+                  {selectedMember.linkedinUrl && (
+                    <a
+                      href={selectedMember.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-12 w-12 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-[#0A1437] hover:text-white transition-all"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  )}
                   <a
                     href="#"
                     className="h-12 w-12 flex items-center justify-center rounded-xl bg-slate-50 text-slate-400 hover:bg-[#0A1437] hover:text-white transition-all"
