@@ -32,7 +32,7 @@ const CeoSection = () => {
                 CEO'S MESSAGE
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] mb-6 leading-tight tracking-tight">
-                MURINZI AHORUKOMEYE <br /> <span className="italic opacity-80 text-brand-red">Bertin</span>
+                MURINZI AHORUKOMEYE <br /> <span className=" opacity-80 text-brand-red">Bertin</span>
               </h2>
               <p className="text-lg text-slate-600 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Leading with vision, integrity, and a commitment to transforming logistics in Rwanda and beyond.
@@ -41,7 +41,7 @@ const CeoSection = () => {
 
             {/* Main Message Block */}
             <div className="relative p-10 rounded-[2rem] bg-slate-50 border border-slate-100 shadow-sm mb-12 overflow-hidden group">
-              <p className="relative z-10 text-xl text-[#0A1437] italic leading-relaxed font-light">
+              <p className="relative z-10 text-xl text-[#0A1437]  leading-relaxed font-light">
                 "At TekAccess, we believe logistics is more than movement, it is trust, precision, and responsibility in action. Every client, any delivery, and every partnership is an opportunity to demonstrate excellence."
               </p>
               <div className="my-8 h-px w-12 bg-[#0A1437]/20" />

@@ -54,7 +54,7 @@ const Hero = () => {
             className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white mb-8 tracking-tight leading-tight">
-              End-to-End <span className="text-brand-red italic">Logistics</span>{" "}
+              End-to-End <span className="text-brand-red">Logistics</span>{" "}
               You Can Trust.
             </h1>
 

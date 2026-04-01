@@ -185,7 +185,7 @@ const Login = () => {
         <div className="relative z-10 flex flex-col justify-center p-16 text-white">
           <h2 className="text-5xl font-black mb-6 leading-tight">
             Manage Your <br />
-            <span className="italic opacity-80">Logistics</span> with Ease
+            <span className=" opacity-80">Logistics</span> with Ease
           </h2>
           <p className="text-lg text-white/70 max-w-md">
             Access real-time tracking, manage shipments, and optimize your supply chain from one powerful dashboard.

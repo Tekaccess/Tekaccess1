@@ -96,7 +96,7 @@ const Services = () => {
             OUR SERVICES
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight mt-4">
-            Comprehensive <span className="italic opacity-80">Logistics Solutions.</span>
+            Comprehensive <span className=" opacity-80">Logistics Solutions.</span>
           </h2>
           <div className="mt-10 h-1.5 w-24 bg-brand-red mx-auto rounded-full" />
         </div>

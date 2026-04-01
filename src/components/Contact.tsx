@@ -38,7 +38,7 @@ const Contact = () => {
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight mb-8">
             Connect with Our <br />
-            <span className="italic opacity-80">Global</span> Team.
+            <span className="opacity-80">Global</span> Team.
           </h2>
           <p className="mx-auto max-w-2xl text-slate-600 text-lg font-light leading-relaxed">
             Ready to streamline your supply chain? Reach out for a customized

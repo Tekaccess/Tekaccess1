@@ -15,7 +15,7 @@ const AboutUs = () => {
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight">
                   Driving Logistics <br />
-                  <span className="text-[#0A1437] italic">Excellence</span>{" "}
+                  <span className="text-[#0A1437] ">Excellence</span>{" "}
                   Across Rwanda.
                 </h2>
                 <p className="text-lg text-slate-600 font-light leading-relaxed max-w-2xl">

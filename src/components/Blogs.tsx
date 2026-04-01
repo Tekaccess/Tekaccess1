@@ -111,7 +111,7 @@ const Blogs = () => {
             PAST ACHIEVEMENTS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight mt-4">
-            Our Proven <span className="italic opacity-70">Track Record.</span>
+            Our Proven <span className="opacity-70">Track Record.</span>
           </h2>
           <p className="mt-4 text-slate-600 text-lg max-w-2xl mx-auto font-light">
             Explore our successful logistics projects and milestones that
