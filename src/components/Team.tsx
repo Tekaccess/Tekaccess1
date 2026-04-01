@@ -174,7 +174,7 @@ const Team = () => {
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight mt-4">
               The Visionaries <br />
-              Behind <span className="italic opacity-80">TekAccess.</span>
+              Behind <span className="opacity-80">TekAccess.</span>
             </h2>
           </div>
           <div className="hidden sm:flex gap-4">
