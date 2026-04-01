@@ -34,7 +34,7 @@ const Team = () => {
       },
       {
         id: "rayan",
-        name: "NSONERA Rayan Ken",
+        name: "Rayan Ken NSONERA",
         position: "Chief Operations Officer",
         about:
           "Oversees operations and business development, manages logistics workflows and premium customer experiences.",
@@ -206,14 +206,21 @@ const Team = () => {
                 onClick={() => setSelectedMember(member)}
                 className="relative flex-shrink-0 w-[300px] sm:w-[340px] h-[500px] sm:h-[550px] rounded-[2rem] overflow-hidden snap-center group cursor-pointer transition-all duration-700 hover:shadow-2xl"
               >
-                <img
-                  src={
-                    member.imageUrl ||
-                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?aut=format&fit=crop&w=800&q=80"
-                  }
-                  alt={member.name}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
+                <div className="absolute inset-0 bg-slate-50">
+                  {member.imageUrl ? (
+                    <img
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                      <div className="text-slate-300 font-bold text-4xl opacity-50">
+                        {member.name.charAt(0)}
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="flex items-center justify-between gap-4 p-5 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20">
@@ -261,15 +268,20 @@ const Team = () => {
         <DialogContent className="max-w-4xl p-0 overflow-hidden bg-white border-0 rounded-[2.5rem] shadow-2xl">
           {selectedMember && (
             <div className="flex flex-col md:flex-row min-h-[500px]">
-              <div className="md:w-2/5 h-64 md:h-auto overflow-hidden">
-                <img
-                  src={
-                    selectedMember.imageUrl ||
-                    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?aut=format&fit=crop&w=800&q=80"
-                  }
-                  alt={selectedMember.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="md:w-2/5 h-64 md:h-auto overflow-hidden bg-slate-50 relative">
+                {selectedMember.imageUrl ? (
+                  <img
+                    src={selectedMember.imageUrl}
+                    alt={selectedMember.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
+                    <div className="text-slate-300 font-bold text-6xl opacity-50">
+                      {selectedMember.name.charAt(0)}
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="md:w-3/5 p-12 lg:p-16 flex flex-col justify-center bg-white relative">
                 <div className="mb-8">
