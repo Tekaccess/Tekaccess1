@@ -7,6 +7,8 @@ import truckImg from "@/assets/about-truck-loading.jpg";
 import shipImg from "@/assets/hero-bg-3.jpg";
 import trainImg from "@/assets/train.jpg";
 import coalImg from "@/assets/coal.jpg";
+import gypsumImg from "@/assets/gypsum.jpg";
+import clinkerImg from "@/assets/clinker.jpg";
 
 interface Service {
   id: string;
@@ -44,6 +46,18 @@ const Services = () => {
       title: "Coal Supply",
       description: "Coal supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
       imageUrl: coalImg
+    },
+    {
+      id: "gypsum-supply",
+      title: "Gypsum Supply",
+      description: "Gypsum supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      imageUrl: gypsumImg
+    },
+    {
+      id: "clinker-supply",
+      title: "Clinker Supply",
+      description: "Clinker supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      imageUrl: clinkerImg
     }
   ];
 
