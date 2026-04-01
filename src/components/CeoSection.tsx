@@ -6,33 +6,33 @@ const CeoSection = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-28 items-center">
           {/* CEO Image Side */}
-          <div className="relative group">
-            <div className="relative aspect-[4/5] max-w-md mx-auto lg:mx-0 overflow-hidden rounded-[2rem] border border-slate-200 shadow-2xl bg-white">
+          <div className="relative group max-w-md mx-auto lg:mx-0">
+            <div className="relative flex overflow-hidden rounded-[2.5rem] border border-slate-200 shadow-2xl bg-white aspect-[4/5]">
               <img
                 src={ceoImage}
                 alt="MURINZI AHORUKOMEYE Bertin - CEO TekAccess"
-                className="w-full h-full object-cover object-[center_20%] grayscale hover:grayscale-0 transition-all duration-1000 transform hover:scale-105"
+                className="w-full h-full object-cover object-[center_20%] transition-all duration-1000 transform hover:scale-105"
               />
-              <div className="absolute inset-0 bg-slate-900/10 pointer-events-none group-hover:bg-transparent transition-all duration-700" />
+              <div className="absolute inset-0 bg-slate-900/5 pointer-events-none" />
             </div>
-            
-            {/* Floating badge */}
-            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-[#0A1437] px-10 py-5 rounded-[1.5rem] shadow-2xl">
+
+            {/* Floating badge centered on image */}
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-brand-red px-10 py-6 rounded-[1.5rem] shadow-2xl w-[240px] z-20">
               <div className="text-center text-white">
-                <p className="text-xs font-bold uppercase tracking-widest mb-1 opacity-70">Founder & CEO</p>
-                <p className="text-[10px] font-bold uppercase tracking-[0.1em] leading-tight">TekAccess Ltd</p>
+                <p className="text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Founder & CEO</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] leading-tight font-black">TekAccess Ltd</p>
               </div>
             </div>
           </div>
 
           {/* CEO Content Side */}
-          <div className="lg:pl-8">
-            <div className="mb-12 text-center lg:text-left">
-              <span className="inline-block text-[#0A1437] font-bold text-xs tracking-widest uppercase mb-6 py-1 px-3 bg-slate-100 rounded-full border border-slate-200">
+          <div className="lg:pl-8 text-center lg:text-left">
+            <div className="mb-12">
+              <span className="inline-block text-brand-red font-bold text-xs tracking-widest uppercase mb-6 py-1 px-3 bg-brand-red/10 rounded-full border border-brand-red/20 leading-tight">
                 CEO'S MESSAGE
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] mb-6 leading-tight tracking-tight">
-                MURINZI AHORUKOMEYE <br /> <span className="italic opacity-80">Bertin</span>
+                MURINZI AHORUKOMEYE <br /> <span className="italic opacity-80 text-brand-red">Bertin</span>
               </h2>
               <p className="text-lg text-slate-600 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Leading with vision, integrity, and a commitment to transforming logistics in Rwanda and beyond.
