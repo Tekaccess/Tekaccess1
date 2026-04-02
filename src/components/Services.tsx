@@ -50,13 +50,13 @@ const Services = () => {
     {
       id: "gypsum-supply",
       title: "Gypsum Supply",
-      description: "Gypsum supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      description: "Gypsum supply sourced in Garissa, Kenya — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
       imageUrl: gypsumImg
     },
     {
       id: "clinker-supply",
       title: "Clinker Supply",
-      description: "Clinker supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      description: "Clinker supply sourced in Kenya — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
       imageUrl: clinkerImg
     }
   ];
