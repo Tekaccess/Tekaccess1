@@ -56,7 +56,7 @@ const Services = () => {
     {
       id: "clinker-supply",
       title: "Clinker Supply",
-      description: "Clinker supply sourced in Kenya — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      description: "Clinker supply sourced in Kenya  — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
       imageUrl: clinkerImg
     }
   ];
