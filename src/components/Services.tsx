@@ -3,8 +3,8 @@ import { Package, Truck, Warehouse, Ship, Plane, Clock, ArrowRight, Zap, ShieldC
 import useFirebase from "@/hooks/useFirebase";
 
 // Import local assets
-import truckImg from "@/assets/about-truck-loading.jpg";
-import shipImg from "@/assets/hero-bg-3.jpg";
+import truckImg from "@/assets/hero-bg-3.jpg";
+import shipImg from "@/assets/Mobile_991x558_V01 shipping internationally jpg.jpg";
 import trainImg from "@/assets/train.jpg";
 import coalImg from "@/assets/coal.jpg";
 import gypsumImg from "@/assets/gypsum.jpg";
@@ -142,9 +142,11 @@ const Services = () => {
                       </span>
                     </div>
 
-                    <div className="absolute -bottom-4 left-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-red shadow-xl border border-slate-50 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white">
-                      <Icon className="h-7 w-7" />
-                    </div>
+                    {index < 3 && (
+                      <div className="absolute -bottom-4 left-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-red shadow-xl border border-slate-50 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white">
+                        <Icon className="h-7 w-7" />
+                      </div>
+                    )}
                   </div>
                 )}
                 <div className="flex-1 p-8 pt-10 flex flex-col">
