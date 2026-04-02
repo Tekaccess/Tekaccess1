@@ -71,12 +71,12 @@ const Footer = () => {
               {[
                 {
                   icon: Facebook,
-                  href: "https://www.facebook.com/people/TekAccess-Ltd/",
+                  href: "https://www.facebook.com/profile.php?id=100043267879876",
                   label: "Facebook",
                 },
                 {
                   icon: Twitter,
-                  href: "https://twitter.com/Tekaccessltd",
+                  href: "https://x.com/Tekaccessltd",
                   label: "Twitter",
                 },
                 {
@@ -86,7 +86,7 @@ const Footer = () => {
                 },
                 {
                   icon: Instagram,
-                  href: "https://www.instagram.com/tekaccessltd?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+                  href: "https://www.instagram.com/tekaccessltd",
                   label: "Instagram",
                 },
               ].map((social) => (
