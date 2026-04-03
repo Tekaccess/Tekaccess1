@@ -20,7 +20,7 @@ const CeoSection = () => {
             <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-brand-red px-10 py-6 rounded-[1.5rem] shadow-2xl w-[240px] z-20">
               <div className="text-center text-white">
                 <p className="text-xs font-bold uppercase tracking-widest mb-1 opacity-80">Founder & CEO</p>
-                <p className="text-[10px] font-bold uppercase tracking-[0.2em] leading-tight font-black">TekAccess Ltd</p>
+                <p className="text-[10px]  uppercase tracking-[0.2em] leading-tight font-black">TekAccess Ltd</p>
               </div>
             </div>
           </div>

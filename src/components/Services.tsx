@@ -62,8 +62,6 @@ const Services = () => {
 
   ];
 
-  const ServiceIcons = [Truck, Ship, Train];
-
   useEffect(() => {
     if (isReady) {
       loadServices();
@@ -118,7 +116,6 @@ const Services = () => {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => {
-            const Icon = ServiceIcons[index % ServiceIcons.length];
             const titleParts = service.title.split(" - ");
             const category = titleParts.length > 1 ? titleParts[0] : "Services";
             const mainTitle = titleParts.length > 1 ? titleParts[1] : service.title;
@@ -143,9 +140,11 @@ const Services = () => {
                       </span>
                     </div>
 
-                    {index < 3 && (
+                    {["trucks-delivery", "ship-delivery", "train-delivery"].includes(service.id) && (
                       <div className="absolute -bottom-4 left-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-brand-red shadow-xl border border-slate-50 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white">
-                        <Icon className="h-7 w-7" />
+                        {service.id === "trucks-delivery" && <Truck className="h-7 w-7" />}
+                        {service.id === "ship-delivery" && <Ship className="h-7 w-7" />}
+                        {service.id === "train-delivery" && <Train className="h-7 w-7" />}
                       </div>
                     )}
                   </div>
