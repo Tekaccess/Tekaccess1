@@ -179,7 +179,7 @@ const Team = () => {
         <div className="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <span className="inline-block text-[#0A1437] font-bold text-xs tracking-widest uppercase mb-4 px-3 py-1 bg-slate-100 rounded-full border border-slate-200">
-              LEADERSHIP
+              The Team
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight mt-4">
               The Visionaries <br />

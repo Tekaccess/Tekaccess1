@@ -24,6 +24,24 @@ const Services = () => {
 
   const initialServices: Service[] = [
     {
+      id: "gypsum-supply",
+      title: "Gypsum Supply",
+      description: "Gypsum supply sourced in Garissa, Kenya — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      imageUrl: gypsumImg
+    },
+    {
+      id: "coal-supply",
+      title: "Coal Supply",
+      description: "Coal supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      imageUrl: coalImg
+    },
+    {
+      id: "clinker-supply",
+      title: "Clinker Supply",
+      description: "Clinker supply sourced in Kenya  — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
+      imageUrl: clinkerImg
+    },
+    {
       id: "trucks-delivery",
       title: "Logistics - Trucks Delivery",
       description: "We have demonstrated operational excellence and precision logistics for large scale industrial projects. Regional transport to Tanzania, Rwanda, Kenya, DRC and Uganda, ensuring timely, secure, cost-effective and on-time deliveries to clients.",
@@ -40,28 +58,11 @@ const Services = () => {
       title: "Logistics - Train Delivery",
       description: "Under our framework business, we manage efficient gypsum transport by train from Dodoma to Kigoma, Tanzania, ensuring reliable and consistent delivery to support cement manufacturing requirements.",
       imageUrl: trainImg
-    },
-    {
-      id: "coal-supply",
-      title: "Coal Supply",
-      description: "Coal supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
-      imageUrl: coalImg
-    },
-    {
-      id: "gypsum-supply",
-      title: "Gypsum Supply",
-      description: "Gypsum supply sourced in Garissa, Kenya — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
-      imageUrl: gypsumImg
-    },
-    {
-      id: "clinker-supply",
-      title: "Clinker Supply",
-      description: "Clinker supply sourced in Kenya  — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
-      imageUrl: clinkerImg
     }
+
   ];
 
-  const ServiceIcons = [Truck, Ship, Train, Zap];
+  const ServiceIcons = [Truck, Ship, Train];
 
   useEffect(() => {
     if (isReady) {
