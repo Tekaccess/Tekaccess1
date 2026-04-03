@@ -7,11 +7,44 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", message: "" });
+    setIsSubmitting(true);
+    setStatusMessage("");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/info@tekaccess.rw", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New Website Contact from ${formData.name}`,
+          _template: "table"
+        })
+      });
+
+      if (response.ok) {
+        setStatusMessage("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        // If it fails or requires activation
+        setStatusMessage("Message submitted. Please check info@tekaccess.rw to activate FormSubmit.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setStatusMessage("An error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setStatusMessage(""), 8000);
+    }
   };
 
   const handleChange = (
@@ -143,11 +176,17 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="gradient-btn w-full flex items-center justify-center gap-3 py-4 text-xs tracking-widest shadow-lg"
+                  disabled={isSubmitting}
+                  className="gradient-btn w-full flex items-center justify-center gap-3 py-4 text-xs tracking-widest shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send className="h-4 w-4" />
-                  SEND MESSAGE
+                  <Send className={`h-4 w-4 ${isSubmitting ? "animate-spin" : ""}`} />
+                  {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                 </button>
+                {statusMessage && (
+                  <div className={`p-4 rounded-xl text-sm font-medium text-center ${statusMessage.includes("success") ? "bg-green-50 text-green-700 border border-green-200" : "bg-amber-50 text-amber-700 border border-amber-200"}`}>
+                    {statusMessage}
+                  </div>
+                )}
               </form>
             </div>
           </div>

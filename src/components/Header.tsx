@@ -51,8 +51,8 @@ const Header = () => {
 
   const navLinks = [
     { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
     { href: "#about", label: "About" },
+    { href: "#services", label: "Services" },
     { href: "#team", label: "Team" },
     { href: "#blogs", label: "Blogs" },
     { href: "#contact", label: "Contact" },
@@ -83,11 +83,10 @@ const Header = () => {
 
       {/* Main Navigation */}
       <header
-        className={`w-full transition-all duration-300 ${
-          isScrolled
+        className={`w-full transition-all duration-300 ${isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-md py-2"
             : "bg-white py-2"
-        }`}
+          }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -195,11 +194,10 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`absolute left-0 right-0 top-full transition-all duration-500 ease-in-out ${
-            mobileMenuOpen
+          className={`absolute left-0 right-0 top-full transition-all duration-500 ease-in-out ${mobileMenuOpen
               ? "translate-y-0 opacity-100"
               : "-translate-y-4 opacity-0 pointer-events-none"
-          }`}
+            }`}
         >
           <nav className="border-t border-slate-100 bg-white shadow-2xl p-6">
             <div className="flex flex-col gap-3">
