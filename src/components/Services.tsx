@@ -10,12 +10,74 @@ import coalImg from "@/assets/coal.jpg";
 import gypsumImg from "@/assets/gypsum.jpg";
 import clinkerImg from "@/assets/clinker.jpg";
 
+import clinker1 from "@/assets/Clinker/images (1).jpg";
+import clinker2 from "@/assets/Clinker/images (2).jpg";
+import clinker3 from "@/assets/Clinker/images.jpg";
+import clinker4 from "@/assets/Clinker/what-is-clinker-1-1024x514.webp";
+
+import coal1 from "@/assets/Coal/images (1).jpg";
+import coal2 from "@/assets/Coal/images (2).jpg";
+import coal3 from "@/assets/Coal/images (3).jpg";
+import coal4 from "@/assets/Coal/images.jpg";
+
+import gypsum1 from "@/assets/Gypsum/Gypsum-P4-800x500-1.jpg";
+import gypsum2 from "@/assets/Gypsum/images (1).jpg";
+import gypsum3 from "@/assets/Gypsum/images.jpg";
+import gypsum4 from "@/assets/Gypsum/raw-gypsum-1705949.webp";
+
 interface Service {
   id: string;
   title: string;
   description: string;
   imageUrl?: string;
+  imageUrls?: string[];
 }
+
+const ImageCarousel = ({ images, title }: { images: string[], title: string }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <>
+      {images.map((img, idx) => (
+        <img
+          key={idx}
+          src={img}
+          alt={`${title} - slide ${idx + 1}`}
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
+            idx === currentIndex ? "opacity-100 scale-100 group-hover:scale-110" : "opacity-0 scale-105"
+          }`}
+        />
+      ))}
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5 z-10">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setCurrentIndex(idx);
+              }}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                idx === currentIndex ? "bg-brand-red w-4" : "bg-white/60 hover:bg-white w-1.5"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
+
 
 const Services = () => {
   const [services, setServices] = useState<Service[]>([]);
@@ -27,19 +89,22 @@ const Services = () => {
       id: "gypsum-supply",
       title: "Gypsum Supply",
       description: "Gypsum supply sourced in Garissa, Kenya — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
-      imageUrl: gypsumImg
+      imageUrl: gypsumImg,
+      imageUrls: [gypsumImg, gypsum1, gypsum2, gypsum3, gypsum4]
     },
     {
       id: "coal-supply",
       title: "Coal Supply",
       description: "Coal supply sourced in Songea, Tanzania — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
-      imageUrl: coalImg
+      imageUrl: coalImg,
+      imageUrls: [coalImg, coal1, coal2, coal3, coal4]
     },
     {
       id: "clinker-supply",
       title: "Clinker Supply",
       description: "Clinker supply sourced in Kenya  — our extensive network with the region’s leading miners ensures a consistent and high-quality supply for industrial needs.",
-      imageUrl: clinkerImg
+      imageUrl: clinkerImg,
+      imageUrls: [clinkerImg, clinker1, clinker2, clinker3, clinker4]
     },
     {
       id: "trucks-delivery",
@@ -125,13 +190,17 @@ const Services = () => {
                 key={service.id}
                 className="group relative flex flex-col overflow-hidden bg-white rounded-3xl border border-slate-100 shadow-lg shadow-slate-200/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-red/5 h-full"
               >
-                {service.imageUrl && (
+                {(service.imageUrl || service.imageUrls) && (
                   <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={service.imageUrl}
-                      alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+                    {service.imageUrls && service.imageUrls.length > 0 ? (
+                      <ImageCarousel images={service.imageUrls} title={service.title} />
+                    ) : (
+                      <img
+                        src={service.imageUrl}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A1437]/60 to-transparent opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
 
                     <div className="absolute top-4 right-4">

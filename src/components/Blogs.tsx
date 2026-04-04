@@ -40,16 +40,26 @@ const Blogs = () => {
       return;
     }
     try {
-      const allBlogs: Blog[] = [];
       const collections = ["blogs", "blog"];
-      for (const col of collections) {
-        try {
-          const snapshot = await db.collection(col).get();
-          snapshot.forEach((doc: any) =>
-            allBlogs.push({ id: doc.id, collection: col, ...doc.data() }),
-          );
-        } catch (e) {}
-      }
+      
+      const promises = collections.map(col => 
+        db.collection(col).get()
+          .then(snapshot => {
+            const docs: Blog[] = [];
+            snapshot.forEach((doc: any) => 
+              docs.push({ id: doc.id, collection: col, ...doc.data() })
+            );
+            return docs;
+          })
+          .catch(e => {
+            console.warn(`Failed to fetch ${col} collection`, e);
+            return [];
+          })
+      );
+
+      const results = await Promise.all(promises);
+      const allBlogs = results.flat();
+
       allBlogs.sort((a, b) => {
         const dateA =
           a.date && typeof a.date === "object"
@@ -155,6 +165,7 @@ const Blogs = () => {
                   <img
                     src={blog.imageUrl || fallbackImages.blog}
                     alt={getTitle(blog)}
+                    loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4">

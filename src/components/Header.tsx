@@ -84,8 +84,8 @@ const Header = () => {
       {/* Main Navigation */}
       <header
         className={`w-full transition-all duration-300 ${isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md py-2"
-            : "bg-white py-2"
+          ? "bg-white/95 backdrop-blur-md shadow-md py-2"
+          : "bg-white py-2"
           }`}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -99,7 +99,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="TekAccess Logo"
-                  className="h-16 sm:h-16 object-contain rounded-md"
+                  className="h-24 sm:h-28 object-contain rounded-md"
                 />
               </a>
             </div>
@@ -195,8 +195,8 @@ const Header = () => {
         {/* Mobile Navigation */}
         <div
           className={`absolute left-0 right-0 top-full transition-all duration-500 ease-in-out ${mobileMenuOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-4 opacity-0 pointer-events-none"
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-4 opacity-0 pointer-events-none"
             }`}
         >
           <nav className="border-t border-slate-100 bg-white shadow-2xl p-6">

@@ -198,7 +198,7 @@ const Contact = () => {
             {
               icon: Phone,
               label: "WhatsApp & Call",
-              val: "+250 788 326 686",
+              val: "+250 788 320 200",
               desc: "Available 24/7 for urgent inquiries",
             },
             {
