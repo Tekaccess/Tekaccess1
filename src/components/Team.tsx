@@ -41,6 +41,7 @@ const Team = () => {
         about:
           "Oversees operations and business development, manages logistics workflows and premium customer experiences.",
         bio: "Commitment to operational excellence bridges the gap between ambitious goals and successful deliveries.",
+        imageUrl: "/Ken-.png",
         linkedinUrl: "https://www.linkedin.com/in/rayan-ken-nsonera-726510170/",
       },
       {
@@ -50,6 +51,7 @@ const Team = () => {
         about:
           "Ensures sound financial planning, compliance, and resource management, driving financial integrity.",
         bio: "Dedicated to building a robust financial foundation that supports sustainable growth.",
+        imageUrl: "/Alban.png",
         linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
       },
       {
@@ -77,6 +79,7 @@ const Team = () => {
         about:
           "Oversees procurement strategies and supplier relationships, ensuring quality and cost-effective sourcing.",
         bio: "Committed to building strong partnerships and securing the best resources for TekAccess.",
+        imageUrl: "/Richard.png",
         linkedinUrl: "https://www.linkedin.com/in/richard-mugabo-645180291/",
       },
       {
@@ -86,6 +89,7 @@ const Team = () => {
         about:
           "Manages technology infrastructure and digital systems, driving innovation through technical excellence.",
         bio: "Passionate about leveraging technology to solve complex logistics challenges.",
+        imageUrl: "/joy.png",
         linkedinUrl: "https://www.linkedin.com/in/joy-ntizimira-20651930b/",
       },
     ];
@@ -124,8 +128,8 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                member.id === "bertin"
-                  ? ceoImage
+                ["bertin", "rayan", "alban", "richard", "joy"].includes(member.id)
+                  ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
               bio: dbMember.bio || member.bio,
