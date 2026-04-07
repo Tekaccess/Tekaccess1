@@ -99,7 +99,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="TekAccess Logo"
-                  className="h-24 sm:h-28 object-contain rounded-md"
+                  className="h-14 sm:h-16 py-2 rounded-md"
                 />
               </a>
             </div>
