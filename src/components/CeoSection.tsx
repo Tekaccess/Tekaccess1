@@ -32,11 +32,11 @@ const CeoSection = () => {
                 CEO'S MESSAGE
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] mb-6 leading-tight tracking-tight">
-                MURINZI AHORUKOMEYE <br /> <span className=" opacity-80 text-brand-red">Bertin</span>
+                Murinzi A. <span className=" opacity-80 text-brand-red">Bertin</span>
               </h2>
-              <p className="text-lg text-slate-600 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
+              {/* <p className="text-lg text-slate-600 font-light leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Leading with vision, integrity, and a commitment to transforming logistics in Rwanda and beyond.
-              </p>
+              </p> */}
             </div>
 
             {/* Main Message Block */}
