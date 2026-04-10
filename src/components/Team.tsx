@@ -54,6 +54,16 @@ const Team = () => {
         imageUrl: "/Alban.png",
         linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
       },
+      // {
+      //   id: "enock",
+      //   name: "Enock M. Kariuki",
+      //   position: "Chief Transport Officer",
+      //   about:
+      //     "Oversees the strategic planning and execution of transportation logistics, ensuring efficient long-haul operations and fleet management across various regions.",
+      //   bio: "Optimizing the arteries of global supply chains with precision and scale.",
+      //   imageUrl: "/enock.png",
+      //   linkedinUrl: "#",
+      // },
       {
         id: "keyla",
         name: "KEZA NKWAYA Keyla",
@@ -105,7 +115,7 @@ const Team = () => {
       {
         id: "kevin",
         name: "Mbonimpaye K. Kevin",
-        position: "Backend Developer",
+        position: "Fullstack Engineer",
         about:
           "Specializes in building robust server-side systems and managing the digital infrastructure that powers TekAccess's logistics solutions.",
         bio: "Powering the core of innovation through reliable and scalable backend architecture.",
@@ -115,23 +125,14 @@ const Team = () => {
       {
         id: "thierry",
         name: "Gusenga Thierry",
-        position: "Frontend Developer",
+        position: "System Administrator",
         about:
           "Focused on creating intuitive and visually stunning user interfaces, ensuring a seamless digital experience for all TekAccess clients.",
         bio: "Crafting the digital storefront of logistics excellence.",
         imageUrl: "/thierry.png",
         linkedinUrl: "https://www.linkedin.com/in/gusenga-thierry-b20820297/",
       },
-      {
-        id: "enock",
-        name: "Enock M. Kariuki",
-        position: "Chief Transport Officer",
-        about:
-          "Oversees the strategic planning and execution of transportation logistics, ensuring efficient long-haul operations and fleet management across various regions.",
-        bio: "Optimizing the arteries of global supply chains with precision and scale.",
-        imageUrl: "/enock.png",
-        linkedinUrl: "#",
-      },
+
     ];
 
     if (isReady) {
