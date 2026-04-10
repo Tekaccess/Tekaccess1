@@ -92,6 +92,16 @@ const Team = () => {
         imageUrl: "/joy.png",
         linkedinUrl: "https://www.linkedin.com/in/joy-ntizimira-20651930b/",
       },
+      {
+        id: "caleb",
+        name: "Caleb A. IGAMBI",
+        position: "Safety and Logistic Coordinator",
+        about:
+          "Ensures the highest standards of safety and operational efficiency in all logistics and supply chain activities, maintaining TekAccess's commitment to excellence.",
+        bio: "Dedicated to maintaining a safe and efficient logistics environment for seamless service delivery.",
+        imageUrl: "/caleb.png",
+        linkedinUrl: "https://www.linkedin.com/in/caleb-igambi-77093999/",
+      },
     ];
 
     if (isReady) {
@@ -128,7 +138,7 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                ["bertin", "rayan", "alban", "richard", "joy"].includes(member.id)
+                ["bertin", "rayan", "alban", "richard", "joy", "caleb"].includes(member.id)
                   ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
