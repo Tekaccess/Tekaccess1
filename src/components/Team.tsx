@@ -102,6 +102,36 @@ const Team = () => {
         imageUrl: "/caleb.png",
         linkedinUrl: "https://www.linkedin.com/in/caleb-igambi-77093999/",
       },
+      {
+        id: "kevin",
+        name: "Mbonimpaye K. Kevin",
+        position: "Backend Developer",
+        about:
+          "Specializes in building robust server-side systems and managing the digital infrastructure that powers TekAccess's logistics solutions.",
+        bio: "Powering the core of innovation through reliable and scalable backend architecture.",
+        imageUrl: "/kevin.png",
+        linkedinUrl: "https://www.linkedin.com/in/mbonikev/",
+      },
+      {
+        id: "thierry",
+        name: "Gusenga Thierry",
+        position: "Frontend Developer",
+        about:
+          "Focused on creating intuitive and visually stunning user interfaces, ensuring a seamless digital experience for all TekAccess clients.",
+        bio: "Crafting the digital storefront of logistics excellence.",
+        imageUrl: "/thierry.png",
+        linkedinUrl: "https://www.linkedin.com/in/gusenga-thierry-b20820297/",
+      },
+      {
+        id: "enock",
+        name: "Enock M. Kariuki",
+        position: "Chief Transport Officer",
+        about:
+          "Oversees the strategic planning and execution of transportation logistics, ensuring efficient long-haul operations and fleet management across various regions.",
+        bio: "Optimizing the arteries of global supply chains with precision and scale.",
+        imageUrl: "/enock.png",
+        linkedinUrl: "#",
+      },
     ];
 
     if (isReady) {
@@ -138,7 +168,7 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                ["bertin", "rayan", "alban", "richard", "joy", "caleb"].includes(member.id)
+                ["bertin", "rayan", "alban", "richard", "joy", "caleb", "kevin", "thierry", "enock"].includes(member.id)
                   ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
