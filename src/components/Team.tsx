@@ -56,12 +56,12 @@ const Team = () => {
       },
       {
         id: "enock",
-        name: "Enock M. Kariuki",
-        position: "Business Development Manager",
+        name: "Enock K. Maina",
+        position: "Chief Transport Manager & Business Development Manager",
         about:
           "Strategic planner and business development expert, focused on expanding TekAccess's market reach and building strong partnerships.",
         bio: "Driving growth through strategic innovation and collaborative excellence.",
-        imageUrl: "/enock.png",
+        imageUrl: "/enock1.png",
         linkedinUrl: "#",
       },
       {
@@ -125,7 +125,7 @@ const Team = () => {
       {
         id: "thierry",
         name: "Gusenga Thierry",
-        position: "System Administrator",
+        position: "System Engineer",
         about:
           "Focused on creating intuitive and visually stunning user interfaces, ensuring a seamless digital experience for all TekAccess clients.",
         bio: "Crafting the digital storefront of logistics excellence.",
@@ -282,9 +282,13 @@ const Team = () => {
                       <h3 className="text-lg font-bold text-[#0A1437] truncate">
                         {member.name}
                       </h3>
-                      <p className="text-xs text-slate-500 font-medium truncate">
-                        {member.position}
-                      </p>
+                      <div className="flex flex-col gap-0.5">
+                        {member.position.split("&").map((pos, i) => (
+                          <p key={i} className="text-[10px] leading-tight text-slate-500 font-medium uppercase tracking-tight truncate">
+                            {pos.trim()}
+                          </p>
+                        ))}
+                      </div>
                     </div>
                     <a
                       href={member.linkedinUrl || "#"}
@@ -342,9 +346,13 @@ const Team = () => {
               </div>
               <div className="md:w-3/5 p-12 lg:p-16 flex flex-col justify-center bg-white relative">
                 <div className="mb-8">
-                  <span className="inline-block text-[#0A1437] font-bold text-xs tracking-widest uppercase mb-4 px-3 py-1 bg-slate-100 rounded-full">
-                    {selectedMember.position}
-                  </span>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {selectedMember.position.split("&").map((pos, i) => (
+                      <span key={i} className="inline-block text-[#0A1437] font-bold text-[10px] tracking-widest uppercase px-3 py-1 bg-slate-100 rounded-full">
+                        {pos.trim()}
+                      </span>
+                    ))}
+                  </div>
                   <h3 className="text-3xl font-extrabold text-[#0A1437]">
                     {selectedMember.name}
                   </h3>
