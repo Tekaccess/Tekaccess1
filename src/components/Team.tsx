@@ -8,6 +8,7 @@ interface TeamMember {
   id: string;
   name: string;
   position: string;
+  position1?: string;
   about?: string;
   bio?: string;
   imageUrl?: string;
@@ -27,7 +28,8 @@ const Team = () => {
       {
         id: "bertin",
         name: "MURINZI AHORUKOMEYE Bertin",
-        position: "Founder & CEO",
+        position: "Founder",
+        position1: "CEO",
         about:
           "Founder of TekAccess with a vision to revolutionize the logistics industry in Rwanda through innovation and integrity.",
         bio: "At TekAccess, we believe logistics is more than movement, it is trust and responsibility in action.",
@@ -57,9 +59,10 @@ const Team = () => {
       {
         id: "enock",
         name: "Enock K. Maina",
-        position: "Chief Transport Manager & Business Development Manager",
+        position: "Business Development Manager",
+        position1: "Chief Transport Manager",
         about:
-          "Strategic planner and business development expert, focused on expanding TekAccess's market reach and building strong partnerships.",
+          "Strategic planner and business development expert, focused on expanding TekAccess's market reach and building strong industry partnerships.",
         bio: "Driving growth through strategic innovation and collaborative excellence.",
         imageUrl: "/enock1.png",
         linkedinUrl: "#",
@@ -282,13 +285,9 @@ const Team = () => {
                       <h3 className="text-lg font-bold text-[#0A1437] truncate">
                         {member.name}
                       </h3>
-                      <div className="flex flex-col gap-0.5">
-                        {member.position.split("&").map((pos, i) => (
-                          <p key={i} className="text-[10px] leading-tight text-slate-500 font-medium uppercase tracking-tight truncate">
-                            {pos.trim()}
-                          </p>
-                        ))}
-                      </div>
+                      <p className="text-xs text-slate-500 font-medium truncate">
+                        {member.position}{member.position1 ? ` & ${member.position1}` : ""}
+                      </p>
                     </div>
                     <a
                       href={member.linkedinUrl || "#"}
@@ -346,12 +345,15 @@ const Team = () => {
               </div>
               <div className="md:w-3/5 p-12 lg:p-16 flex flex-col justify-center bg-white relative">
                 <div className="mb-8">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {selectedMember.position.split("&").map((pos, i) => (
-                      <span key={i} className="inline-block text-[#0A1437] font-bold text-[10px] tracking-widest uppercase px-3 py-1 bg-slate-100 rounded-full">
-                        {pos.trim()}
+                  <div className="flex flex-wrap gap-3 mb-6">
+                    <span className="inline-block text-[#0A1437] font-bold text-xs tracking-widest uppercase px-3 py-1 bg-slate-100 rounded-full">
+                      {selectedMember.position}
+                    </span>
+                    {selectedMember.position1 && (
+                      <span className="inline-block text-[#0A1437] font-bold text-xs tracking-widest uppercase px-3 py-1 bg-slate-200 rounded-full">
+                        {selectedMember.position1}
                       </span>
-                    ))}
+                    )}
                   </div>
                   <h3 className="text-3xl font-extrabold text-[#0A1437]">
                     {selectedMember.name}
