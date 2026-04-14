@@ -54,16 +54,16 @@ const Team = () => {
         imageUrl: "/Alban.png",
         linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
       },
-      // {
-      //   id: "enock",
-      //   name: "Enock M. Kariuki",
-      //   position: "Chief Transport Officer",
-      //   about:
-      //     "Oversees the strategic planning and execution of transportation logistics, ensuring efficient long-haul operations and fleet management across various regions.",
-      //   bio: "Optimizing the arteries of global supply chains with precision and scale.",
-      //   imageUrl: "/enock.png",
-      //   linkedinUrl: "#",
-      // },
+      {
+        id: "enock",
+        name: "Enock M. Kariuki",
+        position: "Business Development Manager",
+        about:
+          "Strategic planner and business development expert, focused on expanding TekAccess's market reach and building strong partnerships.",
+        bio: "Driving growth through strategic innovation and collaborative excellence.",
+        imageUrl: "/enock.png",
+        linkedinUrl: "#",
+      },
       {
         id: "keyla",
         name: "KEZA NKWAYA Keyla",
