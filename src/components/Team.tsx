@@ -65,7 +65,7 @@ const Team = () => {
           "Strategic planner and business development expert, focused on expanding TekAccess's market reach and building strong industry partnerships.",
         bio: "Driving growth through strategic innovation and collaborative excellence.",
         imageUrl: "/enock1.png",
-        linkedinUrl: "#",
+        linkedinUrl: "https://www.linkedin.com/in/enock-maina-b33759403/",
       },
       {
         id: "keyla",
