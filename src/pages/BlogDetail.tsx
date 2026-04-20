@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
 import useFirebase from "@/hooks/useFirebase";
+import { staticBlogs } from "@/data/staticBlogs";
 
 interface Blog {
   id: string;
@@ -28,18 +29,25 @@ const BlogDetail = () => {
   useEffect(() => {
     if (isReady && id) {
       loadBlog(id);
-    } else if (!isReady && id) {
-      // Fallback: create a placeholder for demo
-      setBlog({
-        id,
-        collection: "blogs",
-        title: "Blog Post",
-        content: "<p>Blog content will appear here once Firebase is connected.</p>",
-        imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?aut=format&fit=crop&w=1200&q=80",
-        category: "General",
-        date: Date.now() / 1000,
-      });
-      setLoading(false);
+    } else if (id) {
+      // Check static blogs first as fallback or if Firebase not ready
+      const staticBlog = staticBlogs.find(b => b.id === id);
+      if (staticBlog) {
+        setBlog(staticBlog as any);
+        setLoading(false);
+      } else if (!isReady) {
+        // Fallback: create a placeholder for demo
+        setBlog({
+          id,
+          collection: "blogs",
+          title: "Blog Post",
+          content: "<p>Blog content will appear here once Firebase is connected.</p>",
+          imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?aut=format&fit=crop&w=1200&q=80",
+          category: "General",
+          date: Date.now() / 1000,
+        });
+        setLoading(false);
+      }
     }
   }, [isReady, id]);
 

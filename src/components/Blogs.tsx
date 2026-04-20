@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import useFirebase from "@/hooks/useFirebase";
+import { staticBlogs } from "@/data/staticBlogs";
 
 interface Blog {
   id: string;
@@ -58,7 +59,7 @@ const Blogs = () => {
       );
 
       const results = await Promise.all(promises);
-      const allBlogs = results.flat();
+      const allBlogs = [...staticBlogs, ...results.flat()];
 
       allBlogs.sort((a, b) => {
         const dateA =
