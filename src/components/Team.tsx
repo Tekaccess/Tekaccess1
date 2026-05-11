@@ -79,10 +79,11 @@ const Team = () => {
       {
         id: "kevine",
         name: "MURENZI UWASE Kevine",
-        position: "Operations Officer",
+        position: "Clearing and Operation Officer",
         about:
           "Manages daily operations and ensures smooth execution of logistics workflows with precision and efficiency.",
         bio: "Dedicated to optimizing operational processes for exceptional service delivery.",
+        imageUrl: "/kevine.png",
         linkedinUrl: "https://www.linkedin.com/in/uwase-murenzi-kevine-02bb18315/",
       },
       {
@@ -172,7 +173,7 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                ["bertin", "rayan", "alban", "richard", "joy", "caleb", "kevin", "thierry", "enock"].includes(member.id)
+                ["bertin", "rayan", "alban", "richard", "joy", "caleb", "kevin", "thierry", "enock", "kevine"].includes(member.id)
                   ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
