@@ -57,6 +57,15 @@ const Team = () => {
         linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
       },
       {
+        id: "roger",
+        name: "Roger Paris",
+        position: "Country Manager",
+        about:
+          "Leads TekAccess country operations, driving strategic growth and ensuring operational excellence across all business units.",
+        bio: "Steering TekAccess's national presence with vision, leadership, and a commitment to excellence.",
+        imageUrl: "/rogers%20paris%20.png",
+      },
+      {
         id: "enock",
         name: "Enock K. Maina",
         position: "Business Development Manager",
@@ -173,7 +182,7 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                ["bertin", "rayan", "alban", "richard", "joy", "caleb", "kevin", "thierry", "enock", "kevine"].includes(member.id)
+                ["bertin", "rayan", "alban", "richard", "joy", "caleb", "kevin", "thierry", "enock", "kevine", "roger"].includes(member.id)
                   ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
