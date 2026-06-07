@@ -3,8 +3,14 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
 
+const TEKACCESS_APP_URL = "https://tekaccess.live";
+
 const Header = () => {
   const navigate = useNavigate();
+
+  const goToApp = () => {
+    window.location.href = TEKACCESS_APP_URL;
+  };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -166,7 +172,7 @@ const Header = () => {
                   </div>
                 ) : (
                   <button
-                    onClick={() => navigate("/login")}
+                    onClick={goToApp}
                     className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-[#0A1437] hover:text-white"
                   >
                     <User className="h-4 w-4" />
@@ -235,8 +241,8 @@ const Header = () => {
               ) : (
                 <button
                   onClick={() => {
-                    navigate("/login");
                     setMobileMenuOpen(false);
+                    goToApp();
                   }}
                   className="w-full flex items-center justify-center gap-3 px-6 py-5 bg-[#0A1437] text-white rounded-2xl font-bold hover:bg-[#0A1437]/90 transition-colors"
                 >
