@@ -106,16 +106,6 @@ const Team = () => {
         linkedinUrl: "https://www.linkedin.com/in/richard-mugabo-645180291/",
       },
       {
-        id: "joy",
-        name: "NTIZIMIRA Joy",
-        position: "IT Officer",
-        about:
-          "Manages technology infrastructure and digital systems, driving innovation through technical excellence.",
-        bio: "Passionate about leveraging technology to solve complex logistics challenges.",
-        imageUrl: "/joy.png",
-        linkedinUrl: "https://www.linkedin.com/in/joy-ntizimira-20651930b/",
-      },
-      {
         id: "caleb",
         name: "Caleb A. IGAMBI",
         position: "Safety and Logistic Coordinator",
@@ -182,7 +172,7 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                ["bertin", "rayan", "alban", "richard", "joy", "caleb", "kevin", "thierry", "enock", "kevine", "roger"].includes(member.id)
+                ["bertin", "rayan", "alban", "richard", "caleb", "kevin", "thierry", "enock", "kevine", "roger"].includes(member.id)
                   ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
