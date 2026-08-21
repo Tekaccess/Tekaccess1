@@ -77,6 +77,16 @@ const Team = () => {
         linkedinUrl: "https://www.linkedin.com/in/enock-maina-b33759403/",
       },
       {
+        id: "ornella",
+        name: "ISIMBI Ornella",
+        position: "Human Resource Officer",
+        about:
+          "Leads recruitment, employee relations, and talent development, fostering a workplace culture where the TekAccess team can thrive.",
+        bio: "People are the engine of logistics, investing in them is investing in every delivery we make.",
+        imageUrl: "/ornella.jpeg",
+        linkedinUrl: "https://www.linkedin.com/in/ornella-isimbi-154b0325a/",
+      },
+      {
         id: "keyla",
         name: "KEZA NKWAYA Keyla",
         position: "Administrative Assistant",
@@ -172,7 +182,7 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                ["bertin", "rayan", "alban", "richard", "caleb", "kevin", "thierry", "enock", "kevine", "roger"].includes(member.id)
+                ["bertin", "rayan", "alban", "richard", "caleb", "kevin", "thierry", "enock", "kevine", "roger", "ornella"].includes(member.id)
                   ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
