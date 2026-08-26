@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight, Linkedin, Twitter } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import useFirebase from "@/hooks/useFirebase";
-import ceoImage from "@/assets/ceo.jpg";
 
 interface TeamMember {
   id: string;
@@ -26,40 +25,9 @@ const Team = () => {
   useEffect(() => {
     const initialTeam: TeamMember[] = [
       {
-        id: "bertin",
-        name: "MURINZI AHORUKOMEYE Bertin",
-        position: "Founder",
-        position1: "CEO",
-        about:
-          "Founder of TekAccess with a vision to revolutionize the logistics industry in Rwanda through innovation and integrity.",
-        bio: "At TekAccess, we believe logistics is more than movement, it is trust and responsibility in action.",
-        imageUrl: ceoImage,
-        linkedinUrl: "https://www.linkedin.com/in/murinzi-jimmy-bertin-95b561161/",
-      },
-      {
-        id: "rayan",
-        name: "Rayan Ken NSONERA",
-        position: "Chief Operations Officer",
-        about:
-          "Oversees operations and business development, manages logistics workflows and premium customer experiences.",
-        bio: "Commitment to operational excellence bridges the gap between ambitious goals and successful deliveries.",
-        imageUrl: "/Ken-.png",
-        linkedinUrl: "https://www.linkedin.com/in/rayan-ken-nsonera-726510170/",
-      },
-      {
-        id: "alban",
-        name: "SHIMWA Alban Symplice",
-        position: "Chief Finance Officer",
-        about:
-          "Ensures sound financial planning, compliance, and resource management, driving financial integrity.",
-        bio: "Dedicated to building a robust financial foundation that supports sustainable growth.",
-        imageUrl: "/Alban.png",
-        linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
-      },
-      {
         id: "roger",
-        name: "Roger Paris",
-        position: "Country Manager",
+        name: "Rogers Paris Lyimo",
+        position: "Deputy Managing Director",
         about:
           "Leads TekAccess country operations, driving strategic growth and ensuring operational excellence across all business units.",
         bio: "Steering TekAccess's national presence with vision, leadership, and a commitment to excellence.",
@@ -77,23 +45,30 @@ const Team = () => {
         linkedinUrl: "https://www.linkedin.com/in/enock-maina-b33759403/",
       },
       {
+        id: "alban",
+        name: "SHIMWA Alban Symplice",
+        position: "Chief Finance Officer",
+        about:
+          "Ensures sound financial planning, compliance, and resource management, driving financial integrity.",
+        bio: "Dedicated to building a robust financial foundation that supports sustainable growth.",
+        imageUrl: "/Alban.png",
+        linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
+      },
+      {
+        id: "ornella",
+        name: "NASAGAMBE ISIMBI Ornell",
+        position: "Human Resource Officer",
+        imageUrl: "/Ornella.jpeg",
+        linkedinUrl: "https://www.linkedin.com/in/ornella-isimbi-154b0325a/",
+      },
+      {
         id: "keyla",
-        name: "KEZA NKWAYA Keyla",
-        position: "Administrative Assistant",
+        name: "Keza Nkwaya Keyla",
+        position: "Administrative & Secretariat Officer",
         about:
           "Supports coordination and monitoring of daily operations, administrative efficiency with organization and dedication.",
         bio: "Ensuring that the heart of TekAccess beats with precision and care.",
         linkedinUrl: "https://www.linkedin.com/in/keyla-keza-146475279/",
-      },
-      {
-        id: "kevine",
-        name: "MURENZI UWASE Kevine",
-        position: "Clearing and Operation Officer",
-        about:
-          "Manages daily operations and ensures smooth execution of logistics workflows with precision and efficiency.",
-        bio: "Dedicated to optimizing operational processes for exceptional service delivery.",
-        imageUrl: "/kevine.png",
-        linkedinUrl: "https://www.linkedin.com/in/uwase-murenzi-kevine-02bb18315/",
       },
       {
         id: "richard",
@@ -106,6 +81,26 @@ const Team = () => {
         linkedinUrl: "https://www.linkedin.com/in/richard-mugabo-645180291/",
       },
       {
+        id: "rayan",
+        name: "Rayan Ken NSONERA",
+        position: "Transport Procurement Officer",
+        about:
+          "Oversees operations and business development, manages logistics workflows and premium customer experiences.",
+        bio: "Commitment to operational excellence bridges the gap between ambitious goals and successful deliveries.",
+        imageUrl: "/Ken-.png",
+        linkedinUrl: "https://www.linkedin.com/in/rayan-ken-nsonera-726510170/",
+      },
+      {
+        id: "kevine",
+        name: "UWASE MURENZI Kevine",
+        position: "Clearing & Cashier Officer",
+        about:
+          "Manages daily operations and ensures smooth execution of logistics workflows with precision and efficiency.",
+        bio: "Dedicated to optimizing operational processes for exceptional service delivery.",
+        imageUrl: "/kevine.png",
+        linkedinUrl: "https://www.linkedin.com/in/uwase-murenzi-kevine-02bb18315/",
+      },
+      {
         id: "caleb",
         name: "Caleb A. IGAMBI",
         position: "Safety and Logistic Coordinator",
@@ -116,24 +111,24 @@ const Team = () => {
         linkedinUrl: "https://www.linkedin.com/in/caleb-igambi-77093999/",
       },
       {
-        id: "kevin",
-        name: "Mbonimpaye K. Kevin",
-        position: "Fullstack Engineer",
-        about:
-          "Specializes in building robust server-side systems and managing the digital infrastructure that powers TekAccess's logistics solutions.",
-        bio: "Powering the core of innovation through reliable and scalable backend architecture.",
-        imageUrl: "/kevin.png",
-        linkedinUrl: "https://www.linkedin.com/in/mbonikev/",
-      },
-      {
         id: "thierry",
-        name: "Gusenga Thierry",
-        position: "System Engineer",
+        name: "Thierry Gusenga",
+        position: "Systems Engineering Officer",
         about:
           "Focused on creating intuitive and visually stunning user interfaces, ensuring a seamless digital experience for all TekAccess clients.",
         bio: "Crafting the digital storefront of logistics excellence.",
         imageUrl: "/thierry.png",
         linkedinUrl: "https://www.linkedin.com/in/gusenga-thierry-b20820297/",
+      },
+      {
+        id: "kevin",
+        name: "MBONIMPAYE KANEZA Kevin",
+        position: "Systems Engineering Officer",
+        about:
+          "Specializes in building robust server-side systems and managing the digital infrastructure that powers TekAccess's logistics solutions.",
+        bio: "Powering the core of innovation through reliable and scalable backend architecture.",
+        imageUrl: "/kevin.png",
+        linkedinUrl: "https://www.linkedin.com/in/mbonikev/",
       },
 
     ];
@@ -172,7 +167,7 @@ const Team = () => {
             return {
               ...member,
               imageUrl:
-                ["bertin", "rayan", "alban", "richard", "caleb", "kevin", "thierry", "enock", "kevine", "roger"].includes(member.id)
+                ["rayan", "alban", "richard", "caleb", "kevin", "thierry", "enock", "kevine", "roger"].includes(member.id)
                   ? member.imageUrl
                   : dbMember.imageUrl || member.imageUrl,
               about: dbMember.about || member.about,
