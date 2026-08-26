@@ -53,7 +53,7 @@ const CeoSection = () => {
             {/* Impact */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 pt-6 border-t border-slate-100">
               {[
-                { label: "Founded", val: "2018" },
+                { label: "Founded", val: "2019" },
                 { label: "Impact", val: "500+" },
                 { label: "Vision", val: "Excellence" }
               ].map((item, idx) => (

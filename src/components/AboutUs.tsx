@@ -34,7 +34,7 @@ const AboutUs = () => {
             <div className="space-y-10">
               <div className="space-y-6">
                 <span className="inline-block rounded-full bg-brand-red/10 px-4 py-1 text-xs font-bold uppercase tracking-widest text-brand-red">
-                  Since 2018
+                  Since 2019
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1437] leading-tight tracking-tight">
                   Driving Logistics <br />
