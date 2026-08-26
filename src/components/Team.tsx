@@ -26,7 +26,7 @@ const Team = () => {
     const initialTeam: TeamMember[] = [
       {
         id: "roger",
-        name: "Rogers Paris Lyimo",
+        name: "Rogers PARIS LYIMO",
         position: "Deputy Managing Director",
         about:
           "Leads TekAccess country operations, driving strategic growth and ensuring operational excellence across all business units.",
@@ -35,9 +35,8 @@ const Team = () => {
       },
       {
         id: "enock",
-        name: "Enock K. Maina",
-        position: "Business Development Manager",
-        position1: "Chief Transport Manager",
+        name: "Enock KARIUKI MAINA",
+        position: "Business Development Officer",
         about:
           "Strategic planner and business development expert, focused on expanding TekAccess's market reach and building strong industry partnerships.",
         bio: "Driving growth through strategic innovation and collaborative excellence.",
@@ -63,7 +62,7 @@ const Team = () => {
       },
       {
         id: "keyla",
-        name: "Keza Nkwaya Keyla",
+        name: "KEZA NKWAYA Keyla",
         position: "Administrative & Secretariat Officer",
         about:
           "Supports coordination and monitoring of daily operations, administrative efficiency with organization and dedication.",
@@ -102,8 +101,8 @@ const Team = () => {
       },
       {
         id: "caleb",
-        name: "Caleb A. IGAMBI",
-        position: "Safety and Logistic Coordinator",
+        name: "Caleb ASENA IGAMBI",
+        position: "Safety & Logistics Officer",
         about:
           "Ensures the highest standards of safety and operational efficiency in all logistics and supply chain activities, maintaining TekAccess's commitment to excellence.",
         bio: "Dedicated to maintaining a safe and efficient logistics environment for seamless service delivery.",
@@ -112,8 +111,8 @@ const Team = () => {
       },
       {
         id: "thierry",
-        name: "Thierry Gusenga",
-        position: "Systems Engineering Officer",
+        name: "Thierry GUSENGA",
+        position: "Systems Engineer",
         about:
           "Focused on creating intuitive and visually stunning user interfaces, ensuring a seamless digital experience for all TekAccess clients.",
         bio: "Crafting the digital storefront of logistics excellence.",
@@ -123,7 +122,7 @@ const Team = () => {
       {
         id: "kevin",
         name: "MBONIMPAYE KANEZA Kevin",
-        position: "Systems Engineering Officer",
+        position: "Systems Engineer",
         about:
           "Specializes in building robust server-side systems and managing the digital infrastructure that powers TekAccess's logistics solutions.",
         bio: "Powering the core of innovation through reliable and scalable backend architecture.",
