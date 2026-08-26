@@ -56,7 +56,7 @@ const Team = () => {
       {
         id: "ornella",
         name: "NASAGAMBE ISIMBI Ornell",
-        position: "Human Resource Officer",
+        position: "Human Resources Officer",
         imageUrl: "/Ornella.jpeg",
         linkedinUrl: "https://www.linkedin.com/in/ornella-isimbi-154b0325a/",
       },
@@ -112,7 +112,7 @@ const Team = () => {
       {
         id: "thierry",
         name: "Thierry GUSENGA",
-        position: "Systems Engineer",
+        position: "Systems Engineering Officer",
         about:
           "Focused on creating intuitive and visually stunning user interfaces, ensuring a seamless digital experience for all TekAccess clients.",
         bio: "Crafting the digital storefront of logistics excellence.",
@@ -122,7 +122,7 @@ const Team = () => {
       {
         id: "kevin",
         name: "MBONIMPAYE KANEZA Kevin",
-        position: "Systems Engineer",
+        position: "Systems Engineering Officer",
         about:
           "Specializes in building robust server-side systems and managing the digital infrastructure that powers TekAccess's logistics solutions.",
         bio: "Powering the core of innovation through reliable and scalable backend architecture.",
