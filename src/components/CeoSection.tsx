@@ -1,4 +1,4 @@
-import ceoImage from "@/assets/ceo.jpg";
+import ceoImage from "@/assets/ceo.jpeg";
 
 const CeoSection = () => {
   return (
