@@ -46,7 +46,7 @@ const Team = () => {
       {
         id: "alban",
         name: "SHIMWA Alban Symplice",
-        position: "Chief Finance Officer",
+        position: "Treasurer Officer",
         about:
           "Ensures sound financial planning, compliance, and resource management, driving financial integrity.",
         bio: "Dedicated to building a robust financial foundation that supports sustainable growth.",
