@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar, User, Clock } from "lucide-react";
 import useFirebase from "@/hooks/useFirebase";
 import { staticBlogs } from "@/data/staticBlogs";
+import ErpLaunchGallery, { FeatureImage } from "@/components/blog/ErpLaunchGallery";
 
 interface Blog {
   id: string;
@@ -13,6 +14,11 @@ interface Blog {
   body?: string;
   description?: string;
   text?: string;
+  introLeadHtml?: string;
+  introHtml?: string;
+  outroHtml?: string;
+  featureImage?: string;
+  gallery?: string[];
   imageUrl?: string;
   date?: { seconds: number } | number;
   author?: string;
@@ -88,7 +94,12 @@ const BlogDetail = () => {
   };
 
   const getTitle = () => blog?.title || blog?.name || "Blog Post";
-  const getContent = () => blog?.content || blog?.body || blog?.description || blog?.text || "";
+  const getContent = () =>
+    blog?.content ||
+    blog?.body ||
+    blog?.description ||
+    blog?.text ||
+    `${blog?.introLeadHtml || ""} ${blog?.introHtml || ""} ${blog?.outroHtml || ""}`;
 
   if (loading) {
     return (
@@ -171,10 +182,20 @@ const BlogDetail = () => {
         </div>
 
         {/* Body */}
-        <div
-          className="prose prose-lg prose-slate max-w-none"
-          dangerouslySetInnerHTML={{ __html: getContent() }}
-        />
+        {blog.gallery && blog.gallery.length > 0 ? (
+          <div className="prose prose-lg prose-slate max-w-none">
+            <div dangerouslySetInnerHTML={{ __html: blog.introLeadHtml || "" }} />
+            {blog.featureImage && <FeatureImage src={blog.featureImage} />}
+            <div dangerouslySetInnerHTML={{ __html: blog.introHtml || "" }} />
+            <ErpLaunchGallery images={blog.gallery} />
+            <div dangerouslySetInnerHTML={{ __html: blog.outroHtml || "" }} />
+          </div>
+        ) : (
+          <div
+            className="prose prose-lg prose-slate max-w-none"
+            dangerouslySetInnerHTML={{ __html: getContent() }}
+          />
+        )}
 
         {/* Share Section */}
         <div className="mt-16 pt-8 border-t border-slate-100">
