@@ -61,6 +61,7 @@ export const staticBlogs: Blog[] = [
       "/blog/erp-launch/081A1670.jpg",
       "/blog/erp-launch/081A1846.jpg",
       "/blog/erp-launch/081A2116.jpg",
+      "/blog/erp-launch/twinkletwinkleeeeeeeee.jpg",
     ],
     outroHtml: `
       <p>From strengthening our operations to expanding our reach across markets, every milestone represents the collective effort of our teams and the vision that continues to drive the company forward.</p>
