@@ -30,7 +30,7 @@ export const staticBlogs: Blog[] = [
     introHtml: `
       <p>What started as a vision to build a more connected, efficient, and scalable operation has grown into a company continuously pushing forward, strengthening its systems, expanding its operations, and building the foundation for the future.</p>
 
-      <p></p>
+      <p>The launch of Tekaccess ERP marks an important step in that journey.</p>
 
       <p>Designed to connect key areas of the business, from finance and fleet operations to procurement, human resources, sales, and field operations, the ERP brings information and processes together in one integrated system. It gives teams greater visibility, supports faster decision-making, and creates a stronger foundation for managing a growing business.</p>
 
