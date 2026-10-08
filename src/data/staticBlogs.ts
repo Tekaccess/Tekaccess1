@@ -24,19 +24,19 @@ export const staticBlogs: Blog[] = [
     date: new Date("2026-10-07").getTime(),
     imageUrl: "/blog/erp-launch/intro1.jpg",
     introLeadHtml: `
-      <p><strong>Tekaccess celebrates a new chapter with the launch of the Tekaccess ERP and a milestone.</strong></p>
+      <p>Tekaccess celebrates a new chapter with the launch of the Tekaccess ERP and milestones.</p>
     `,
     featureImage: "/blog/erp-launch/0.jpg",
     introHtml: `
       <p>What started as a vision to build a more connected, efficient, and scalable operation has grown into a company continuously pushing forward, strengthening its systems, expanding its operations, and building the foundation for the future.</p>
 
-      <p>The launch of <strong>Tekaccess ERP</strong> marks an important step in that journey.</p>
+      <p></p>
 
-      <p>Designed to connect key areas of the business, from <strong>finance and fleet operations to procurement, human resources, sales, and field operations</strong>, the ERP brings information and processes together in one integrated system. It gives teams greater visibility, supports faster decision-making, and creates a stronger foundation for managing a growing business.</p>
+      <p>Designed to connect key areas of the business, from finance and fleet operations to procurement, human resources, sales, and field operations, the ERP brings information and processes together in one integrated system. It gives teams greater visibility, supports faster decision-making, and creates a stronger foundation for managing a growing business.</p>
 
       <p>But the day was about more than a new system.</p>
 
-      <p>It was about celebrating the <strong>people, progress, and milestones</strong> that brought Tekaccess to this point.</p>
+      <p>It was about celebrating the people, progress, and milestones that brought Tekaccess to this point.</p>
     `,
     gallery: [
       "/blog/erp-launch/2.jpg",
@@ -51,23 +51,27 @@ export const staticBlogs: Blog[] = [
       "/blog/erp-launch/11.jpg",
       "/blog/erp-launch/12.jpg",
       "/blog/erp-launch/13.jpg",
+      "/blog/erp-launch/081A1496.jpg",
       "/blog/erp-launch/081A1506.jpg",
+      "/blog/erp-launch/081A1547.jpg",
       "/blog/erp-launch/081A1560.jpg",
-      "/blog/erp-launch/081A1615.jpg",
+      "/blog/erp-launch/081A1580.jpg",
       "/blog/erp-launch/081A1592.jpg",
       "/blog/erp-launch/081A1645.jpg",
       "/blog/erp-launch/081A1670.jpg",
+      "/blog/erp-launch/081A2008.jpg",
+      "/blog/erp-launch/081A2085.jpg",
       "/blog/erp-launch/081A2116.jpg",
-      "/blog/erp-launch/twinkletwinkleeeeeeeee.jpg",
+      "/blog/erp-launch/21.jpg",
     ],
     outroHtml: `
       <p>From strengthening our operations to expanding our reach across markets, every milestone represents the collective effort of our teams and the vision that continues to drive the company forward.</p>
 
-      <p>As we celebrate this achievement, we remain focused on what comes next: <strong>building stronger systems, expanding into new markets, and creating a more connected and efficient future for Tekaccess.</strong></p>
+      <p>As we celebrate this achievement, we remain focused on what comes next: building stronger systems, expanding into new markets, and creating a more connected and efficient future for Tekaccess.</p>
 
       <p>Here's to the journey so far and to everything still ahead.</p>
 
-      <p><strong>Tekaccess Group<br />Building the Future.</strong></p>
+      <p>Tekaccess Group<br />Building the Future.</p>
     `,
   },
   {

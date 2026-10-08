@@ -31,7 +31,7 @@ const Team = () => {
         about:
           "Leads TekAccess country operations, driving strategic growth and ensuring operational excellence across all business units.",
         bio: "Steering TekAccess's national presence with vision, leadership, and a commitment to excellence.",
-        imageUrl: "/rogers%20paris%20.png",
+        imageUrl: "/rogers%20paris.png",
       },
       {
         id: "enock",
@@ -50,7 +50,7 @@ const Team = () => {
         about:
           "Ensures sound financial planning, compliance, and resource management, driving financial integrity.",
         bio: "Dedicated to building a robust financial foundation that supports sustainable growth.",
-        imageUrl: "/Alban.png",
+        imageUrl: "/Alban.jpg",
         linkedinUrl: "https://www.linkedin.com/in/alban-symplice-shimwa-97b5271b3/",
       },
       {
@@ -76,7 +76,7 @@ const Team = () => {
         about:
           "Oversees procurement strategies and supplier relationships, ensuring quality and cost-effective sourcing.",
         bio: "Committed to building strong partnerships and securing the best resources for TekAccess.",
-        imageUrl: "/Richard.png",
+        imageUrl: "/Richard.jpg",
         linkedinUrl: "https://www.linkedin.com/in/richard-mugabo-645180291/",
       },
       {
@@ -126,7 +126,7 @@ const Team = () => {
         about:
           "Specializes in building robust server-side systems and managing the digital infrastructure that powers TekAccess's logistics solutions.",
         bio: "Powering the core of innovation through reliable and scalable backend architecture.",
-        imageUrl: "/kevin.png",
+        imageUrl: "/kevin.jpg",
         linkedinUrl: "https://www.linkedin.com/in/mbonikev/",
       },
 
