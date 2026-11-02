@@ -61,10 +61,15 @@ const Header = () => {
     { href: "#services", label: "Services" },
     { href: "#team", label: "Team" },
     { href: "#blogs", label: "Blogs" },
+    { href: "/careers", label: "Careers" },
     { href: "#contact", label: "Contact" },
   ];
 
   const scrollToSection = (href: string) => {
+    if (href.startsWith("/")) {
+      navigate(href);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       const offset = 80;
